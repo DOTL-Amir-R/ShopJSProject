@@ -1,0 +1,269 @@
+/************************************
+CSS Reset
+*************************************/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+    color: #fafafa;
+}
+
+ul,li{
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: rgba(35, 47, 62, 0.89);
+    color: #fafafa;
+}
+.container{
+    max-width: 1360px;
+    margin: 0 auto;
+    padding: 0;
+}
+/************************************
+Utils
+*************************************/
+.gray-color-8F8E8E{
+    color: #8F8E8E;
+}
+.cyan-color-00FFE0{
+    color: #00FFE0;
+}
+.width-26-percentage{
+    width: 26%;
+}
+.width-39-percentage{
+    width: 39.045%;
+}
+.width-24-percentage{
+    width: 24.118%;
+}
+.padd-20{
+    padding: 1.25rem;
+}
+.white-color-fafafa{
+    color: #fafafa;
+}
+.width-79{
+    width: 79%;
+}
+.border-radius-8{
+    border-radius: .5rem;
+}
+.outline-border-none{
+    outline: none;
+}
+.border-1-FAFAFA{
+    border: 0.0625rem #fafafa solid;
+}
+.background-none{
+    background: none;
+}
+.gap-30{
+    gap: 1.875rem;
+}
+.gap-68{
+    gap: 4.25rem;
+}
+.gap-32{
+    gap: 2rem;
+}
+.gap-19{
+    gap: 1.1875rem;
+}
+.margin-top-38{
+    margin-top: 2.375rem;
+}
+.margin-left-56{
+    margin-left: 3.5rem;
+}
+.margin-left-76{
+    margin-left: 4.5rem;
+}
+.margin-bot-60{
+    margin-bottom: 3.75rem;
+}
+.margin-top-19{
+    margin-top: 1.1875rem;
+}
+.padding-top-bot-11{
+    padding-top: 0.6875rem;
+    padding-bottom: 0.6875rem;
+}
+.text-decoration-line-through{
+    text-decoration: line-through;
+}
+.font-weight-500{
+    font-weight: 500;
+}
+.box-shadow-one{
+    box-shadow: 0rem .25rem .25rem rgba(0, 0, 0, 0.25);
+    border-radius: 1rem;
+}
+.margin-top-100{
+    margin-top: 6.25rem;
+}
+.width-30{
+    width:30%;
+}
+.width-71-percentage{
+    width: 71%;
+}
+.padd-36{
+    padding: 2.25rem;
+}
+.padd-40{
+    padding: 2.5rem;
+}
+.width-33-percentage{
+    width: 33%;
+}
+/**********
+typeographi
+**********/
+.f-size-40{
+    font-size:2.5rem ;
+}
+.f-size-32{
+    font-size: 2rem;
+}
+.f-size-30{
+    font-size: 1.875rem;
+}
+.f-size-16{
+    font-size: 1rem;
+}
+.f-size-18{
+    font-size: 1.125rem;
+}
+.f-size-14{
+    font-size: 0.875rem;
+}
+.f-size-28{
+    font-size: 1.75rem;
+}
+.f-size-20{
+    font-size: 1.25rem;
+}
+.f-size-24{
+    font-size: 1.5rem;
+}
+
+/************************************
+sign in inputs
+*************************************/
+.first-name-input{
+    padding: 0.78125rem 1.125rem;
+    width: 16.75rem;
+}
+.last-name-input{
+    padding: 0.78125rem 1.125rem;
+    width: 16.75rem;
+
+}
+.email-name-input{
+    padding: 1.125rem 1.875rem;
+
+}
+.password-name-input{
+    padding: 1.125rem 1.875rem;
+
+}
+/********************************
+components
+********************************/
+.create-your-account-btn{
+    padding-left: 10.40625rem;
+    padding-right: 10.40625rem;
+    background-color: #30F31F;
+    color: #fafafa;
+    border: 0.0625rem solid #30F31F;
+    border-radius: 2.21875rem;
+}
+.search-input-product-page{
+    border: none;
+    outline: none;
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    width: 20rem;
+}
+.product-card-container-products-page{
+    padding: 0.75rem 0.75rem 0.5rem 0.75rem;
+    border-radius: 1rem;
+    background-color: #497E8F;
+
+}
+/***************************
+...
+**************************/
+.google-play-method{
+    padding: 0.9375rem 10.8125rem 0.9375rem 1.5rem;
+    background: #FAFAFA;
+    border: 0.0625rem solid #232323;
+    border-radius: 2.21875rem;
+    color: #474545;
+    gap: 5.125rem;
+}
+.search-icon-product-page{
+    padding: 0.53125rem 1.625rem;
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+    background-color: #13A4EC;
+}
+/*.or-text::before{
+    display: flex;
+    content: '';
+    border: 0.0625rem solid #232323;
+    rotate: 90deg;
+}
+.or-text::after{
+    display: flex;
+    content: '';
+    border: 0.0625rem solid #232323;
+    rotate: 90deg;
+}*/
+/**************************
+main header
+****************************/
+
+.main-header-container{
+    background-color: #232F3E;
+    width: 100%;
+}
+
+/**************
+product page
+***************/
+.body-products{
+    background-color: rgba(35, 47, 62, 89%);
+}
+
+/******
+hero-section-home-page
+**********/
+.main-hero-sction-home-page{
+    background-image: url(../img/hero-section-img.png);
+}
+.main-hero-section-text-home-page{
+    padding: 9.532rem 0;
+}
+/***********
+progress bar for review
+********************/
+.progress-bar-container{
+    border-radius: 1rem;
+    border: 0.0625rem solid #fafafa;
+    width: 75%;
+}
+.progress-bar{
+    border-radius: 1rem;
+    background-color: orange;
+    padding: 0.5rem 1rem 0.875rem 1rem;
+    width: 50%;
+}
