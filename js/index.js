@@ -6,6 +6,9 @@ const ratingTwoStarFilterBox = document.getElementById('rating-two-star-filter-b
 const ratingThreeStarFilterBox = document.getElementById('rating-three-star-filter-box')
 const ratingFourStarFilterBox = document.getElementById('rating-four-star-filter-box')
 const ratingFiveStarFilterBox = document.getElementById('rating-five-star-filter-box')
+const deleteAllFilters = document.getElementById('delete-all-filters')
+const highestToLowestFilterBox = document.getElementById('highest-to-lowest-filter-box')
+const lowestTohighestFilterBox = document.getElementById('lowest-to-highest-filter-box')
 
 function makeStarsForProducts(testItem){
     switch(testItem.rating){
@@ -101,7 +104,6 @@ productsArray.forEach((product)=>{
     product.addEventListener('click',()=>{
         productsData().forEach((backData)=>{
             if(Number(product.id) === backData.id  ){
-                console.log(backData.reviews)
                 const test02 = backData
 
             }
@@ -111,6 +113,42 @@ productsArray.forEach((product)=>{
     })
 })
 
+deleteAllFilters.addEventListener('click',()=>{
+    allProductsCardContainerProductsPage.innerHTML = ""
+    productsData().forEach((item)=>{
+            const newProductCard = `
+            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
+                <img class="product-icon" src="${item.icon}" alt="product icon">
+                <div class="name-and-model-of-product-container d-flex justify-content-between">
+                <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
+                    ${item.name}
+                </div>
+                <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
+                ${item.model}
+                </div>
+                </div>
+                <div class="prices-of-product-container d-flex flex-column">
+                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
+                    ${item.price}
+                    </div>
+                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
+                        50000T
+                    </div>
+                </div>
+                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
+                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
+                        more...
+                    </a>
+                    <div class="star-review-of-product-container d-flex">
+                        ${makeStarsForProducts(item)}
+                    </div>
+                </div>
+            </div> 
+            `
+            
+        allProductsCardContainerProductsPage.innerHTML  += newProductCard
+    })
+})
 
 ratingOneStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -148,7 +186,7 @@ ratingOneStarFilterBox.addEventListener('click',()=>{
             `
             
             allProductsCardContainerProductsPage.innerHTML  += newProductCard
-            console.log(item.rating)
+
         }
     })
 })
@@ -305,5 +343,83 @@ ratingFiveStarFilterBox.addEventListener('click',()=>{
             
             allProductsCardContainerProductsPage.innerHTML  += newProductCard
         }
+    })
+})
+highestToLowestFilterBox.addEventListener('click',()=>{
+    allProductsCardContainerProductsPage.innerHTML = ""
+
+    const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(b.price)-parseInt(a.price))
+
+    newSortedByPriceArray.forEach((item)=>{
+        const newProductCard = `
+        <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
+            <img class="product-icon" src="${item.icon}" alt="product icon">
+            <div class="name-and-model-of-product-container d-flex justify-content-between">
+            <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
+                ${item.name}
+            </div>
+            <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
+            ${item.model}
+            </div>
+            </div>
+            <div class="prices-of-product-container d-flex flex-column">
+                <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
+                ${item.price}
+                </div>
+                <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
+                    50000T
+                </div>
+            </div>
+            <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
+                <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
+                    more...
+                </a>
+                <div class="star-review-of-product-container d-flex">
+                    ${makeStarsForProducts(item)}
+                </div>
+            </div>
+        </div> 
+        `
+        
+        allProductsCardContainerProductsPage.innerHTML  += newProductCard
+    })
+})
+lowestTohighestFilterBox.addEventListener('click',()=>{
+    allProductsCardContainerProductsPage.innerHTML = ""
+
+    const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(a.price)-parseInt(b.price))
+
+    newSortedByPriceArray.forEach((item)=>{
+        const newProductCard = `
+        <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
+            <img class="product-icon" src="${item.icon}" alt="product icon">
+            <div class="name-and-model-of-product-container d-flex justify-content-between">
+            <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
+                ${item.name}
+            </div>
+            <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
+            ${item.model}
+            </div>
+            </div>
+            <div class="prices-of-product-container d-flex flex-column">
+                <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
+                ${item.price}
+                </div>
+                <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
+                    50000T
+                </div>
+            </div>
+            <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
+                <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
+                    more...
+                </a>
+                <div class="star-review-of-product-container d-flex">
+                    ${makeStarsForProducts(item)}
+                </div>
+            </div>
+        </div> 
+        `
+        
+        allProductsCardContainerProductsPage.innerHTML  += newProductCard
     })
 })

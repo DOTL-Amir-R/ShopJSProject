@@ -45,7 +45,7 @@ export default  function productsData() {
             rating:4,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'red',
-            price:'300000T',
+            price:'5786421450T',
             avaibality:'false',
             model:'acer'
         },
@@ -57,7 +57,7 @@ export default  function productsData() {
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'red',
-            price:'300000T',
+            price:'3T',
             avaibality:'false',
             model:'acer'
         },
@@ -69,7 +69,7 @@ export default  function productsData() {
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'red',
-            price:'300000T',
+            price:'5500000T',
             avaibality:'false',
             model:'acer'
         },
@@ -81,7 +81,7 @@ export default  function productsData() {
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'red',
-            price:'300000T',
+            price:'300T',
             avaibality:'false',
             model:'acer'
         },
@@ -93,7 +93,7 @@ export default  function productsData() {
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'red',
-            price:'300000T',
+            price:'3000T',
             avaibality:'false',
             model:'acer'
         },
@@ -105,7 +105,7 @@ export default  function productsData() {
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'red',
-            price:'300000T',
+            price:'30000T',
             avaibality:'false',
             model:'acer'
         },
