@@ -42,117 +42,55 @@
                     1 item
                 </div>
             </div>
-            <div class="product-and-buy-your-items-container d-flex  justify-content-between">
-                <div class="product-card-container-user-basket-page d-flex justify-content-between p-4 width-71-percentage box-shadow-one">
-                    <div class="product-details-container d-flex gap-68 ">
-                        <div class="product-icon-input-counter-container d-flex flex-column gap-4 align-items-center">
-                            <img class="product-icon" width="200" height="200" src="../img/one-product-icon.png" alt="product icon">
-                            <form class="">
-                                <input class="counter-of-produxts-input" type="number" value="1">
-                            </form>
+            <div class="buy-your-items-and-products-in-basket-container d-flex flex-row-reverse justify-content-between">
+                <div class="buy-your-items-container d-flex  justify-content-between align-self-start">
+                    <div class="buy-your-items-container box-shadow-one padd-40 d-flex flex-column align-items-center gap-3">
+                        <div class="number-of-items fw-normal f-size-30">
+                            number of items:1
                         </div>
-                        <div class="product-more-details-container d-flex flex-column">
-                            <div class="product-name font-weight-500 f-size-24">
-                                gtx 1650 , 4gb , ddr6
-                            </div>
-                            <div class="product-color-container d-flex">
-                                <div class="product-color-text font-weight-500 f-size-24">Color:</div>
-                                <img class="product-color-icon" src="../img/color-red.svg" alt="product color">
-                            </div>
-                            <div class="product-store font-weight-500 f-size-24">
-                                shop:pc center
-                            </div>
-                            <div class="product-is-availabe-or-not-container d-flex">
-                                <div class="product-is-availabe-or-not-text font-weight-500 f-size-24">availabe:</div>
-                                <img class="product-is-availabe-or-not-icon" src="../img/color-green.svg" alt="product color">
-                            </div>
-                            <div class="time-of-product-arrive font-weight-500 f-size-24">
-                                time to arrive from now: 2days
-                            </div>
-                            <div class="price-of-product fw-bold f-size-30">
-                                price:0000T
-                            </div>
+                        <div class="total-price-of-items fw-normal f-size-30">
+                            total price:0000T
                         </div>
-                    </div>
-                    <img class="more-option align-self-start" src="../img/more-details.svg" alt="more details icon">
-                </div>
-                <div class="buy-your-items-container box-shadow-one padd-40 d-flex flex-column align-items-center gap-3">
-                    <div class="number-of-items fw-normal f-size-30">
-                        number of items:1
-                    </div>
-                    <div class="total-price-of-items fw-normal f-size-30">
-                        total price:0000T
-                    </div>
-                    <button class="buy-your-items-btn fw-normal f-size-18 mt-3">
-                        buy it now
-                    </button>
-                </div>
-            </div>
-            <div class="product-card-container-user-basket-page d-flex justify-content-between p-4 width-71-percentage box-shadow-one mt-3">
-                <div class="product-details-container d-flex gap-68 ">
-                    <div class="product-icon-input-counter-container d-flex flex-column gap-4 align-items-center">
-                        <img class="product-icon" width="200" height="200" src="../img/one-product-icon.png" alt="product icon">
-                        <form class="">
-                            <input class="counter-of-produxts-input" type="number" value="1">
-                        </form>
-                    </div>
-                    <div class="product-more-details-container d-flex flex-column">
-                        <div class="product-name font-weight-500 f-size-24">
-                            gtx 1650 , 4gb , ddr6
-                        </div>
-                        <div class="product-color-container d-flex">
-                            <div class="product-color-text font-weight-500 f-size-24">Color:</div>
-                            <img class="product-color-icon" src="../img/color-red.svg" alt="product color">
-                        </div>
-                        <div class="product-store font-weight-500 f-size-24">
-                            shop:pc center
-                        </div>
-                        <div class="product-is-availabe-or-not-container d-flex">
-                            <div class="product-is-availabe-or-not-text font-weight-500 f-size-24">availabe:</div>
-                            <img class="product-is-availabe-or-not-icon" src="../img/color-green.svg" alt="product color">
-                        </div>
-                        <div class="time-of-product-arrive font-weight-500 f-size-24">
-                            time to arrive from now: 2days
-                        </div>
-                        <div class="price-of-product fw-bold f-size-30">
-                            price:0000T
-                        </div>
+                        <button id="buy-your-items-btn" class="buy-your-items-btn fw-normal f-size-18 mt-3">
+                            buy it now
+                        </button>
                     </div>
                 </div>
-                <img class="more-option align-self-start" src="../img/more-details.svg" alt="more details icon">
-            </div>
-            <div class="product-card-container-user-basket-page d-flex justify-content-between p-4 width-71-percentage box-shadow-one mt-3">
-                <div class="product-details-container d-flex gap-68 ">
-                    <div class="product-icon-input-counter-container d-flex flex-column gap-4 align-items-center">
-                        <img class="product-icon" width="200" height="200" src="../img/one-product-icon.png" alt="product icon">
-                        <form class="">
-                            <input class="counter-of-produxts-input" type="number" value="1">
-                        </form>
-                    </div>
-                    <div class="product-more-details-container d-flex flex-column">
-                        <div class="product-name font-weight-500 f-size-24">
-                            gtx 1650 , 4gb , ddr6
+                <div id="products-in-basket-container" class="products-in-basket-container flex-grow-1">
+                    <!-- <div class="product-card-container-user-basket-page d-flex justify-content-between p-4 width-71-percentage box-shadow-one">
+                        <div class="product-details-container d-flex gap-68 ">
+                            <div class="product-icon-input-counter-container d-flex flex-column gap-4 align-items-center">
+                                <img class="product-icon" width="200" height="200" src="../img/one-product-icon.png" alt="product icon">
+                                <form class="">
+                                    <input id="counter-of-products-input" class="counter-of-products-input" type="number" value="1">
+                                </form>
+                            </div>
+                            <div class="product-more-details-container d-flex flex-column">
+                                <div class="product-name font-weight-500 f-size-24">
+                                    gtx 1650 , 4gb , ddr6
+                                </div>
+                                <div class="product-color-container d-flex">
+                                    <div class="product-color-text font-weight-500 f-size-24">Color:</div>
+                                    <img class="product-color-icon" src="../img/color-red.svg" alt="product color">
+                                </div>
+                                <div class="product-store font-weight-500 f-size-24">
+                                    shop:pc center
+                                </div>
+                                <div class="product-is-availabe-or-not-container d-flex">
+                                    <div class="product-is-availabe-or-not-text font-weight-500 f-size-24">availabe:</div>
+                                    <img class="product-is-availabe-or-not-icon" src="../img/color-green.svg" alt="product color">
+                                </div>
+                                <div class="time-of-product-arrive font-weight-500 f-size-24">
+                                    time to arrive from now: 2days
+                                </div>
+                                <div class="price-of-product fw-bold f-size-30">
+                                    price:0000T
+                                </div>
+                            </div>
                         </div>
-                        <div class="product-color-container d-flex">
-                            <div class="product-color-text font-weight-500 f-size-24">Color:</div>
-                            <img class="product-color-icon" src="../img/color-red.svg" alt="product color">
-                        </div>
-                        <div class="product-store font-weight-500 f-size-24">
-                            shop:pc center
-                        </div>
-                        <div class="product-is-availabe-or-not-container d-flex">
-                            <div class="product-is-availabe-or-not-text font-weight-500 f-size-24">availabe:</div>
-                            <img class="product-is-availabe-or-not-icon" src="../img/color-green.svg" alt="product color">
-                        </div>
-                        <div class="time-of-product-arrive font-weight-500 f-size-24">
-                            time to arrive from now: 2days
-                        </div>
-                        <div class="price-of-product fw-bold f-size-30">
-                            price:0000T
-                        </div>
-                    </div>
+                        <img class="more-option align-self-start" src="../img/more-details.svg" alt="more details icon">
+                    </div> -->
                 </div>
-                <img class="more-option align-self-start" src="../img/more-details.svg" alt="more details icon">
             </div>
             <div class="related-title margin-top-100 fw-bold f-size-30 margin-left-56 pb-3 mb-3">
                 todays off
@@ -420,5 +358,6 @@
         <footer class="main-footer margin-top-100">
             footer
         </footer>
+        <script type="module" src="../js/user-basket.js"></script>
     </body>
 </html>
