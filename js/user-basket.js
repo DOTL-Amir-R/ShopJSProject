@@ -69,7 +69,7 @@ uniqId.map((itemId,index)=>{
             const productImageAndInputContainer = [...productCardIconAndDetailsContainer[0].children]
             const productInputCounterContainerAndIcon = [...productImageAndInputContainer[0].children]
             const productInputCounter = productInputCounterContainerAndIcon[1][0]
-            productInputCounter.value = Number(productInputCounterContainerAndIcon[1][0].value) + 1
+            productInputCounter.value = Number(productInputCounter.value) + 1
 
         }
     })
@@ -79,9 +79,24 @@ uniqId.map((itemId,index)=>{
 function counterForItemsInUserBasket() {
     return getItemFromLocalStorageParsed.length
 }
+
 function totalPriceCounter() {
-    
+    let totalPriceOfProduct = 0
+    uniqId.map((itemId,index)=>{
+        const productCardContainer = [...productsInBasketContainer.children]
+        const productCardIconAndDetailsContainer = [...productCardContainer[index].children]
+        const productImageAndInputContainer = [...productCardIconAndDetailsContainer[0].children]
+        const productInputCounterContainerAndIcon = [...productImageAndInputContainer[0].children]
+        const productInputCounter = productInputCounterContainerAndIcon[1][0]
+        productsData().map((item)=>{
+            if(item.id === Number(itemId)){
+                const price = parseInt(item.price) * parseInt(productInputCounter.value)
+                totalPriceOfProduct = parseInt(totalPriceOfProduct) + parseInt(price)
+            }
+        })
+    })
+    return totalPriceOfProduct
 }
 itemCounterTextHeader.innerHTML = `Items:${counterForItemsInUserBasket()}`
 numberOfItems.innerHTML = `Number of items:${counterForItemsInUserBasket()}`
-totalPriceOfItems.innerHTML = `Total price:${s}s`
+totalPriceOfItems.innerHTML = `Total price:${totalPriceCounter()}`
