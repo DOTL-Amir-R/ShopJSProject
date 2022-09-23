@@ -51,11 +51,6 @@ uniqId.map((productId)=>{
                 </div>
                 `
                 productsInBasketContainer.innerHTML += putProductInBasket
-
-
-                console.log(putProductInBasket)
-
-
             };
         });
 
@@ -66,7 +61,6 @@ uniqId.map((item,index)=>{
 
     getItemFromLocalStorageParsed.map((originalItem)=>{
         if(item === originalItem){
-            console.log(index , originalItem)
             const test = [...productsInBasketContainer.children]
             const test01 = [...test[index].children]
             const test02 = [...test01[0].children]

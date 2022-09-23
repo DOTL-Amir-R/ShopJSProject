@@ -10,8 +10,9 @@ const ratingFiveStarFilterBox = document.getElementById('rating-five-star-filter
 const deleteAllFilters = document.getElementById('delete-all-filters');
 const highestToLowestFilterBox = document.getElementById('highest-to-lowest-filter-box');
 const lowestTohighestFilterBox = document.getElementById('lowest-to-highest-filter-box');
-
-
+const modelFilterHpCheckBox = document.getElementById('model-hp-checkbox');
+const modelFilterAsusCheckBox = document.getElementById('model-asus-checkbox');
+const modelFilterAcerCheckBox = document.getElementById('model-acer-checkbox');
 
 
 function makeStarsForProducts(testItem){
@@ -69,89 +70,54 @@ function makeStarsForProducts(testItem){
             `
     }
 };
-
-    productsData().map((item)=>{
-        const newProductCard = `
-        <a href="./more-detail-for-one-product.html">
-            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-                <img class="product-icon" src="${item.icon}" alt="product icon">
-                <div class="name-and-model-of-product-container d-flex justify-content-between">
+function makeNewProductCards(itemData){
+    const newProductCard = 
+    `<a id="${itemData.id}" href="./more-detail-for-one-product.html">
+        <div  data-rating="${itemData.rating}" class="product-card-container-products-page box-shadow-one">
+            <img class="product-icon" src="${itemData.icon}" alt="product icon">
+            <div class="name-and-model-of-product-container d-flex justify-content-between">
                 <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                    ${item.name}
+                    ${itemData.name}
                 </div>
                 <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.model}
+                    ${itemData.model}
                 </div>
+            </div>
+            <div class="prices-of-product-container d-flex flex-column">
+                <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
+                    ${itemData.price}
                 </div>
-                <div class="prices-of-product-container d-flex flex-column">
-                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                    ${item.price}
-                    </div>
-                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                        50000T
-                    </div>
+                <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
+                    50000T
                 </div>
-                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                        more...
-                    </a>
-                    <div class="star-review-of-product-container d-flex">
-                        ${makeStarsForProducts(item)}
-                    </div>
+            </div>
+            <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
+                <div href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
+                    more...
                 </div>
-            </div> 
-            </a>
-        `
-        allProductsCardContainerProductsPage.innerHTML  += newProductCard
-    })
+                <div class="star-review-of-product-container d-flex">
+                    ${makeStarsForProducts(itemData)}
+                </div>
+            </div>
+        </div> 
+    </a>`
+    allProductsCardContainerProductsPage.innerHTML  += newProductCard
+}
+productsData().map((item)=>{
+    makeNewProductCards(item)
+})
 
 const productsArray = [...allProductsCardContainerProductsPage.children] 
 
 productsArray.forEach((product)=>{
     product.addEventListener('click',()=>{
-        productsData().forEach((backData)=>{
-            if(Number(product.id) === backData.id  ){
-                const currentProduct = backData
 
-                 const test03 = `
-                <div id="${backData.id}" class="main-product-container d-flex flex-column align-items-center">
-                <div class="name-of-product f-size-30 font-weight-500 my-3 py-3 ">
-                    ${backData.name}
-                </div>
-                <div class="product-img-container d-flex gap-30 justify-content-center">
-                    <img class="width-26-percentage box-shadow-one" src="${backData.icon}">
-                    <div class="details-for-product width-39-percentage f-size-18 fw-normal box-shadow-one pt-2 ps-2">
-                        ${backData.moreDetails}
-                    </div>
-                    <div class="buy-product-container padd-20 box-shadow-one d-flex flex-column">
-                        <div class="price-of-product f-size-18 fw-normal">
-                        ${backData.price}
-                        </div>
-                        <div class="wirte-your-address f-size-18 fw-normal">
-                            Write your address
-                        </div>
-                        <form>
-                            <input type="number" value="1">
-                        </form>
-                        <div class="colors-cotainer d-flex">
-                            <div class="colors-title f-size-18 fw-normal">
-                                Colors
-                            </div>
-                            <div class="selected-colors-container">
-                            ${backData.color}
-                            </div>
-                        </div>
-                        <button id="add-to-your-basket" class="f-size-18 fw-normal">
-                            Add to your basket
-                        </button>
-                        <button class="f-size-18 fw-normal ">
-                            Buy now
-                        </button>
-                    </div>
-                </div>
-            </div>
-                `
-                localStorage.setItem('moreDetailsData',JSON.stringify(test03))
+        productsData().forEach((backData)=>{
+
+            if(Number(product.id) === Number(backData.id)  ){
+
+
+                localStorage.setItem('currentProductID',JSON.stringify(backData.id))
 
 
             }
@@ -164,39 +130,7 @@ productsArray.forEach((product)=>{
 deleteAllFilters.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
     productsData().forEach((item)=>{
-            const newProductCard = `
-            <a href="./more-detail-for-one-product.html">
-            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-                <img class="product-icon" src="${item.icon}" alt="product icon">
-                <div class="name-and-model-of-product-container d-flex justify-content-between">
-                <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                    ${item.name}
-                </div>
-                <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.model}
-                </div>
-                </div>
-                <div class="prices-of-product-container d-flex flex-column">
-                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                    ${item.price}
-                    </div>
-                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                        50000T
-                    </div>
-                </div>
-                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                        more...
-                    </a>
-                    <div class="star-review-of-product-container d-flex">
-                        ${makeStarsForProducts(item)}
-                    </div>
-                </div>
-            </div> 
-        </a>
-        `
-            
-        allProductsCardContainerProductsPage.innerHTML  += newProductCard
+        makeNewProductCards(item)
     })
 })
 
@@ -204,40 +138,7 @@ ratingOneStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
     productsData().forEach((item)=>{
         if(item.rating === 1){
-            
-            const newProductCard = `
-            <a href="./more-detail-for-one-product">
-            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-                <img class="product-icon" src="${item.icon}" alt="product icon">
-                <div class="name-and-model-of-product-container d-flex justify-content-between">
-                <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                    ${item.name}
-                </div>
-                <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.model}
-                </div>
-                </div>
-                <div class="prices-of-product-container d-flex flex-column">
-                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                    ${item.price}
-                    </div>
-                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                        50000T
-                    </div>
-                </div>
-                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                        more...
-                    </a>
-                    <div class="star-review-of-product-container d-flex">
-                        ${makeStarsForProducts(item)}
-                    </div>
-                </div>
-            </div> 
-        </a>
-        `
-            
-            allProductsCardContainerProductsPage.innerHTML  += newProductCard
+            makeNewProductCards(item)
 
         }
     })
@@ -247,39 +148,7 @@ ratingTwoStarFilterBox.addEventListener('click',()=>{
     productsData().forEach((item)=>{
         if(item.rating === 2){
             
-            const newProductCard = `
-            <a href="./more-detail-for-one-product.html">
-            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-                <img class="product-icon" src="${item.icon}" alt="product icon">
-                <div class="name-and-model-of-product-container d-flex justify-content-between">
-                <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                    ${item.name}
-                </div>
-                <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.model}
-                </div>
-                </div>
-                <div class="prices-of-product-container d-flex flex-column">
-                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                    ${item.price}
-                    </div>
-                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                        50000T
-                    </div>
-                </div>
-                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                        more...
-                    </a>
-                    <div class="star-review-of-product-container d-flex">
-                        ${makeStarsForProducts(item)}
-                    </div>
-                </div>
-            </div> 
-        </a>
-        `
-            
-            allProductsCardContainerProductsPage.innerHTML  += newProductCard
+            makeNewProductCards(item)
         }
     })
 })
@@ -287,40 +156,7 @@ ratingThreeStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
     productsData().forEach((item)=>{
         if(item.rating === 3){
-            
-            const newProductCard = `
-            <a href="./more-detail-for-one-product.html">
-            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-                <img class="product-icon" src="${item.icon}" alt="product icon">
-                <div class="name-and-model-of-product-container d-flex justify-content-between">
-                <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                    ${item.name}
-                </div>
-                <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.model}
-                </div>
-                </div>
-                <div class="prices-of-product-container d-flex flex-column">
-                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                    ${item.price}
-                    </div>
-                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                        50000T
-                    </div>
-                </div>
-                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                        more...
-                    </a>
-                    <div class="star-review-of-product-container d-flex">
-                        ${makeStarsForProducts(item)}
-                    </div>
-                </div>
-            </div> 
-        </a>
-        `
-            
-            allProductsCardContainerProductsPage.innerHTML  += newProductCard
+            makeNewProductCards(item)
         }
     })
 })
@@ -329,39 +165,7 @@ ratingFourStarFilterBox.addEventListener('click',()=>{
     productsData().forEach((item)=>{
         if(item.rating === 4){
             
-            const newProductCard = `
-            <a href="./more-detail-for-one-product.html">
-            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-                <img class="product-icon" src="${item.icon}" alt="product icon">
-                <div class="name-and-model-of-product-container d-flex justify-content-between">
-                <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                    ${item.name}
-                </div>
-                <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.model}
-                </div>
-                </div>
-                <div class="prices-of-product-container d-flex flex-column">
-                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                    ${item.price}
-                    </div>
-                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                        50000T
-                    </div>
-                </div>
-                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                        more...
-                    </a>
-                    <div class="star-review-of-product-container d-flex">
-                        ${makeStarsForProducts(item)}
-                    </div>
-                </div>
-            </div> 
-        </a>
-        `
-            
-            allProductsCardContainerProductsPage.innerHTML  += newProductCard
+            makeNewProductCards(item)
         }
     })
 })
@@ -369,39 +173,7 @@ ratingFiveStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
     productsData().forEach((item)=>{
         if(item.rating === 5){
-            const newProductCard = `
-            <a href="./more-detail-for-one-product.html">
-            <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-                <img class="product-icon" src="${item.icon}" alt="product icon">
-                <div class="name-and-model-of-product-container d-flex justify-content-between">
-                <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                    ${item.name}
-                </div>
-                <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.model}
-                </div>
-                </div>
-                <div class="prices-of-product-container d-flex flex-column">
-                    <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                    ${item.price}
-                    </div>
-                    <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                        50000T
-                    </div>
-                </div>
-                <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                    <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                        more...
-                    </a>
-                    <div class="star-review-of-product-container d-flex">
-                        ${makeStarsForProducts(item)}
-                    </div>
-                </div>
-            </div> 
-        </a>
-        `
-            
-            allProductsCardContainerProductsPage.innerHTML  += newProductCard
+            makeNewProductCards(item)
         }
     })
 })
@@ -411,39 +183,7 @@ highestToLowestFilterBox.addEventListener('click',()=>{
     const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(b.price)-parseInt(a.price))
 
     newSortedByPriceArray.forEach((item)=>{
-        const newProductCard = `
-        <a href="./more-detail-for-one-product.html">
-        <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-            <img class="product-icon" src="${item.icon}" alt="product icon">
-            <div class="name-and-model-of-product-container d-flex justify-content-between">
-            <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.name}
-            </div>
-            <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-            ${item.model}
-            </div>
-            </div>
-            <div class="prices-of-product-container d-flex flex-column">
-                <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                ${item.price}
-                </div>
-                <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                    50000T
-                </div>
-            </div>
-            <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                    more...
-                </a>
-                <div class="star-review-of-product-container d-flex">
-                    ${makeStarsForProducts(item)}
-                </div>
-            </div>
-        </div> 
-    </a>
-    `
-        
-        allProductsCardContainerProductsPage.innerHTML  += newProductCard
+        makeNewProductCards(item)
     })
 })
 lowestTohighestFilterBox.addEventListener('click',()=>{
@@ -452,38 +192,30 @@ lowestTohighestFilterBox.addEventListener('click',()=>{
     const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(a.price)-parseInt(b.price))
 
     newSortedByPriceArray.forEach((item)=>{
-        const newProductCard = `
-        <a href="./more-detail-for-one-product.html">
-        <div id="${item.id}" data-rating="${item.rating}" class="product-card-container-products-page box-shadow-one">
-            <img class="product-icon" src="${item.icon}" alt="product icon">
-            <div class="name-and-model-of-product-container d-flex justify-content-between">
-            <div class="name-of-product f-size-20 white-color-fafafa font-weight-500">
-                ${item.name}
-            </div>
-            <div class="model-of-product f-size-20 white-color-fafafa font-weight-500">
-            ${item.model}
-            </div>
-            </div>
-            <div class="prices-of-product-container d-flex flex-column">
-                <div class="new-price-of-product f-size-20 white-color-fafafa fw-bold">
-                ${item.price}
-                </div>
-                <div class="old-price-of-product f-size-14 text-decoration-line-through gray-color-8F8E8E fw-normal">
-                    50000T
-                </div>
-            </div>
-            <div class="more-btn-and-star-review-of-product-container d-flex justify-content-between ">
-                <a href="" class="more-btn-of-product f-size-16 cyan-color-00FFE0">
-                    more...
-                </a>
-                <div class="star-review-of-product-container d-flex">
-                    ${makeStarsForProducts(item)}
-                </div>
-            </div>
-        </div> 
-    </a>
-    `
-        
-        allProductsCardContainerProductsPage.innerHTML  += newProductCard
+        makeNewProductCards(item)
     })
 })
+modelFilterHpCheckBox.addEventListener('click',()=>{
+    allProductsCardContainerProductsPage.innerHTML = ""
+    const newFilterByModelHp = productsData().forEach((item)=>{
+        if(item.model === 'hp'){
+            makeNewProductCards(item)
+        }
+    })
+})
+modelFilterAsusCheckBox.addEventListener('click',()=>{
+    allProductsCardContainerProductsPage.innerHTML = ""
+    const newFilterByModelAsus = productsData().forEach((item)=>{
+        if(item.model === 'asus'){
+            makeNewProductCards(item)
+        }
+    })
+});
+modelFilterAcerCheckBox.addEventListener('click',()=>{
+    allProductsCardContainerProductsPage.innerHTML = ""
+    const newFilterByModelAcer = productsData().forEach((item)=>{
+        if(item.model === 'acer'){
+            makeNewProductCards(item)
+        }
+    })
+});

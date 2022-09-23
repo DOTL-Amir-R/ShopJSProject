@@ -10,15 +10,57 @@ const commentsOfUsersContainer = document.getElementById('comments-of-users-cont
 // const thirdStar = document.getElementById('third-star')
 // const fourthStar = document.getElementById('fourth-star')
 // const fithStar = document.getElementById('fith-star')
-const moreDatilsDataFromLocanStorage = localStorage.getItem('moreDetailsData');
+const currentProductIdFromLocalStorage = localStorage.getItem('currentProductID');
 
 const dataFromLocalStorage = localStorage.getItem('idOfMainProductFromMoreDetailsPage');
-console.log(dataFromLocalStorage)
+
 const dataFromLocalStorageParsed = JSON.parse(dataFromLocalStorage);
 
 const arrayShared = dataFromLocalStorageParsed || [] ;
+productsData().forEach((item)=>{
+    if(item.id === Number(currentProductIdFromLocalStorage)){
+        const test03 = `
+        <div id="${item.id}" class="main-product-container d-flex flex-column align-items-center">
+        <div class="name-of-product f-size-30 font-weight-500 my-3 py-3 ">
+            ${item.name}
+        </div>
+        <div class="product-img-container d-flex gap-30 justify-content-center">
+            <img class="width-26-percentage box-shadow-one" src="${item.icon}">
+            <div class="details-for-product width-39-percentage f-size-18 fw-normal box-shadow-one pt-2 ps-2">
+                ${item.moreDetails}
+            </div>
+            <div class="buy-product-container padd-20 box-shadow-one d-flex flex-column">
+                <div class="price-of-product f-size-18 fw-normal">
+                ${item.price}
+                </div>
+                <div class="wirte-your-address f-size-18 fw-normal">
+                    Write your address
+                </div>
+                <form>
+                    <input type="number" value="1">
+                </form>
+                <div class="colors-cotainer d-flex">
+                    <div class="colors-title f-size-18 fw-normal">
+                        Colors
+                    </div>
+                    <div class="selected-colors-container">
+                    ${item.color}
+                    </div>
+                </div>
+                <button id="add-to-your-basket" class="f-size-18 fw-normal">
+                    Add to your basket
+                </button>
+                <button class="f-size-18 fw-normal ">
+                    Buy now
+                </button>
+            </div>
+        </div>
+        </div>
+        `
+        mainProductContainer.innerHTML = test03;
+    }
+})
 
-mainProductContainer.innerHTML = JSON.parse(moreDatilsDataFromLocanStorage);
 
 
 const addToYourBasket = document.getElementById('add-to-your-basket');
