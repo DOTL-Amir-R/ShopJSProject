@@ -111,19 +111,11 @@ const productsArray = [...allProductsCardContainerProductsPage.children]
 
 productsArray.forEach((product)=>{
     product.addEventListener('click',()=>{
-
         productsData().forEach((backData)=>{
-
             if(Number(product.id) === Number(backData.id)  ){
-
-
                 localStorage.setItem('currentProductID',JSON.stringify(backData.id))
-
-
             }
-            
         })
-
     })
 })
 

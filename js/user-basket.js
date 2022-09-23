@@ -5,6 +5,9 @@ const productsInBasketContainer = document.getElementById('products-in-basket-co
 const buyyouritemsbtn = document.getElementById('buy-your-items-btn');
 const getItemFromLocalStorage = localStorage.getItem('idOfMainProductFromMoreDetailsPage');
 const getItemFromLocalStorageParsed = [...JSON.parse(getItemFromLocalStorage)];
+const totalPriceOfItems = document.getElementById('total-price-of-items');
+const numberOfItems = document.getElementById('number-of-items');
+const itemCounterTextHeader = document.getElementById('item-counter-text-header')
 
 const uniqId = [...new Set(getItemFromLocalStorageParsed)]
 
@@ -57,19 +60,28 @@ uniqId.map((productId)=>{
 });
 
 
-uniqId.map((item,index)=>{
+uniqId.map((itemId,index)=>{
 
-    getItemFromLocalStorageParsed.map((originalItem)=>{
-        if(item === originalItem){
-            const test = [...productsInBasketContainer.children]
-            const test01 = [...test[index].children]
-            const test02 = [...test01[0].children]
-            const test03 = [...test02[0].children]
-            const inputTest = test03[1][0]
-
-            inputTest.value = Number(test03[1][0].value) + 1
+    getItemFromLocalStorageParsed.map((originalItemId)=>{
+        if(itemId === originalItemId){
+            const productCardContainer = [...productsInBasketContainer.children]
+            const productCardIconAndDetailsContainer = [...productCardContainer[index].children]
+            const productImageAndInputContainer = [...productCardIconAndDetailsContainer[0].children]
+            const productInputCounterContainerAndIcon = [...productImageAndInputContainer[0].children]
+            const productInputCounter = productInputCounterContainerAndIcon[1][0]
+            productInputCounter.value = Number(productInputCounterContainerAndIcon[1][0].value) + 1
 
         }
     })
 
 })
+
+function counterForItemsInUserBasket() {
+    return getItemFromLocalStorageParsed.length
+}
+function totalPriceCounter() {
+    
+}
+itemCounterTextHeader.innerHTML = `Items:${counterForItemsInUserBasket()}`
+numberOfItems.innerHTML = `Number of items:${counterForItemsInUserBasket()}`
+totalPriceOfItems.innerHTML = `Total price:${s}s`
