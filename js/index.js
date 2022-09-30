@@ -70,6 +70,7 @@ function makeStarsForProducts(testItem){
             `
     }
 };
+// in male new products cards function you need to fix the last line for better performance
 function makeNewProductCards(itemData){
     const newProductCard = 
     `<a id="${itemData.id}" href="./more-detail-for-one-product.html">

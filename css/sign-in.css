@@ -29,6 +29,12 @@ body{
 /************************************
 Utils
 *************************************/
+.position-relative{
+    position: relative;
+}
+.position-absolute{
+    position: absolute;
+}
 .gray-color-8F8E8E{
     color: #8F8E8E;
 }
@@ -266,4 +272,21 @@ progress bar for review
     background-color: orange;
     padding: 0.5rem 1rem 0.875rem 1rem;
     width: 50%;
+}
+/**************
+more details page
+**************/
+.related-products-container{
+    transition: 1s all linear;
+    left: 0%;
+}
+.related-section-container{
+    overflow: hidden;
+    height: 22rem;
+    /* position: relative;
+    overflow-y: hidden;
+    overflow-x: scroll; */
+}
+.arrows-container{
+    height: 2.5rem;
 }
