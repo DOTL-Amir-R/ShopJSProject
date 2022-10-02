@@ -70,10 +70,13 @@ function generateProductsForSliderProduct(containerOfSliderProduct){
 }
 function silderProduct(containerOfProducts , goNextProductBtn,goPrevProductBtn){
     let numberOfHowManyProductsGotPassed =0
-    setInterval(() => {
-        numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed +1
-        containerOfProducts.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
-    }, 3000);
+    // if(numberOfHowManyProductsGotPassed !== containerOfProducts.children.length - 3){
+    //     setInterval(() => {
+    //         numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed +1
+    //         console.log(numberOfHowManyProductsGotPassed)
+    //         containerOfProducts.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
+    //     }, 3000);
+    // }
     goNextProductBtn.addEventListener('click',()=>{
         if(numberOfHowManyProductsGotPassed !== containerOfProducts.children.length - 3){
             numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed +1
