@@ -277,7 +277,7 @@ progress bar for review
 more details page
 **************/
 .related-products-container{
-    transition: 1s all linear;
+    transition: .6s all linear;
     left: 0%;
 }
 .related-section-container{

@@ -241,15 +241,22 @@ productsData().forEach((item)=>{
 })
 
 
-let testNumber =0
+let numberOfHowManyProductsGotPassed =0
 nextArrow.addEventListener('click',()=>{
-    testNumber= testNumber +1
-    console.log(testNumber)
-    relatedProductsContainer.style.left = testNumber * '-25' + '%'
-})
+    if(numberOfHowManyProductsGotPassed !== relatedProductsContainer.children.length - 3){
+        numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed +1
+        relatedProductsContainer.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
+    };
+});
 prevArrow.addEventListener('click',()=>{
-    testNumber= testNumber -1
-    console.log(testNumber)
-    relatedProductsContainer.style.left = testNumber * '-25' + '%'
-})
-
+    if(numberOfHowManyProductsGotPassed !== 0){
+        numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed -1
+        relatedProductsContainer.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
+    };
+});
+function test(item){
+    item.addEventListener('click',()=>{
+        console.log('agree')
+    })
+}
+test(item)

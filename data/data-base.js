@@ -108,6 +108,17 @@ export default  function productsData() {
             price:'30000T',
             avaibality:'false',
             model:'acer'
+        },        {
+            id:10,
+            icon:'../img/product-one.png',
+            name:'mouse 2500 gg hf gaming',
+            reviews:'2 star',
+            rating:2,
+            moreDetails:'this is a new mouse for a hardcore gaming and pros only',
+            color:'red',
+            price:'0123456789T',
+            avaibality:'false',
+            model:'nothing'
         },
         
     ]
