@@ -1,5 +1,7 @@
 import productsData from "../data/data-base.js";
 import  {createProductInBasket} from "./util01.js";
+import { generateProductsForSliderProduct } from "../module/components/makeSliderProduct.js";
+import { silderProduct } from "../module/components/makeSliderProduct.js";
 
 const productsInBasketContainer = document.getElementById('products-in-basket-container');
 const buyyouritemsbtn = document.getElementById('buy-your-items-btn');
@@ -8,6 +10,12 @@ const getItemFromLocalStorageParsed = [...JSON.parse(getItemFromLocalStorage)];
 const totalPriceOfItems = document.getElementById('total-price-of-items');
 const numberOfItems = document.getElementById('number-of-items');
 const itemCounterTextHeader = document.getElementById('item-counter-text-header')
+const nextArrowTodaysOff = document.getElementById('next-arrow-todays-off');
+const prevArrowTodaysOff = document.getElementById('prev-arrow-todays-off');
+const todaysOffProductsContainer = document.getElementById('todays-off-products-container')
+const prevArrow = document.getElementById('prev-arrow');
+const nextArrow = document.getElementById('next-arrow');
+const relatedProductsContainer = document.getElementById('related-products-container');
 
 const uniqId = [...new Set(getItemFromLocalStorageParsed)]
 
@@ -100,3 +108,8 @@ function totalPriceCounter() {
 itemCounterTextHeader.innerHTML = `Items:${counterForItemsInUserBasket()}`
 numberOfItems.innerHTML = `Number of items:${counterForItemsInUserBasket()}`
 totalPriceOfItems.innerHTML = `Total price:${totalPriceCounter()}`
+
+generateProductsForSliderProduct(todaysOffProductsContainer);
+silderProduct(todaysOffProductsContainer,nextArrowTodaysOff,prevArrowTodaysOff);
+generateProductsForSliderProduct(relatedProductsContainer)
+silderProduct(relatedProductsContainer,nextArrow,prevArrow)
