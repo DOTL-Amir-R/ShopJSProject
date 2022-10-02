@@ -8,6 +8,9 @@ const commentsOfUsersContainer = document.getElementById('comments-of-users-cont
 const prevArrow = document.getElementById('prev-arrow');
 const nextArrow = document.getElementById('next-arrow');
 const relatedProductsContainer = document.getElementById('related-products-container');
+const nextArrowTodaysOff = document.getElementById('next-arrow-todays-off');
+const prevArrowTodaysOff = document.getElementById('prev-arrow-todays-off');
+const todaysOffProductsContainer = document.getElementById('todays-off-products-container')
 
 const currentProductIdFromLocalStorage = localStorage.getItem('currentProductID');
 
@@ -60,7 +63,31 @@ productsData().forEach((item)=>{
     }
 })
 
-
+function generateProductsForSliderProduct(containerOfSliderProduct){
+    productsData().forEach((item)=>{
+        makeNewProductCards(item,containerOfSliderProduct)
+    })
+}
+function silderProduct(containerOfProducts , goNextProductBtn,goPrevProductBtn){
+    let numberOfHowManyProductsGotPassed =0
+    setInterval(() => {
+        numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed +1
+        containerOfProducts.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
+    }, 3000);
+    goNextProductBtn.addEventListener('click',()=>{
+        if(numberOfHowManyProductsGotPassed !== containerOfProducts.children.length - 3){
+            numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed +1
+            containerOfProducts.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
+            console.log('nice')
+        };
+    });
+    goPrevProductBtn.addEventListener('click',()=>{
+        if(numberOfHowManyProductsGotPassed !== 0){
+            numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed -1
+            containerOfProducts.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
+        };
+    });
+}
 
 const addToYourBasket = document.getElementById('add-to-your-basket');
 
@@ -236,27 +263,15 @@ function makeNewProductCards(itemData,containerForProducts){
     containerForProducts.innerHTML  += newProductCard
 
 }
-productsData().forEach((item)=>{
-    makeNewProductCards(item,relatedProductsContainer)
-})
 
-
-let numberOfHowManyProductsGotPassed =0
-nextArrow.addEventListener('click',()=>{
-    if(numberOfHowManyProductsGotPassed !== relatedProductsContainer.children.length - 3){
-        numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed +1
-        relatedProductsContainer.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
-    };
-});
-prevArrow.addEventListener('click',()=>{
-    if(numberOfHowManyProductsGotPassed !== 0){
-        numberOfHowManyProductsGotPassed= numberOfHowManyProductsGotPassed -1
-        relatedProductsContainer.style.left = numberOfHowManyProductsGotPassed * '-33' + '%'
-    };
-});
-function test(item){
-    item.addEventListener('click',()=>{
-        console.log('agree')
-    })
-}
-test(item)
+generateProductsForSliderProduct(relatedProductsContainer)
+silderProduct(relatedProductsContainer,nextArrow,prevArrow)
+generateProductsForSliderProduct(todaysOffProductsContainer)
+silderProduct(todaysOffProductsContainer,nextArrowTodaysOff,prevArrowTodaysOff)
+// if(nextArrow.addEventListener('click')){
+//     console.log('clicked not interval')
+// }else{
+//     setInterval(() => {
+//         console.log('interval')
+//     }, 3000);
+// }
