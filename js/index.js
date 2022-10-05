@@ -15,7 +15,7 @@ const modelFilterAsusCheckBox = document.getElementById('model-asus-checkbox');
 const modelFilterAcerCheckBox = document.getElementById('model-acer-checkbox');
 const mainHeroSectionTextAndIconProductsPage = document.getElementById('main-hero-section-text-and-icon-products-page');
 const prevButtonMainHeroSection = document.getElementById('prev-button-main-hero-section');
-const nrevButtonMainHeroSection = document.getElementById('prev-button-main-hero-section');
+const nextButtonMainHeroSection = document.getElementById('prev-button-main-hero-section');
 
 
 function makeStarsForProducts(testItem){
@@ -224,14 +224,26 @@ const arrayOfSliderPictures = [
     'url(../img/../img/hero-section-img.png)',
 
 ]
+let indexOfImageArray = 0
 setInterval(() => {
-    mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[0]
-    console.log(arrayOfSliderPictures[0])
+
+    if(indexOfImageArray === arrayOfSliderPictures.length -1 ){
+        indexOfImageArray = 0
+    }else{
+        indexOfImageArray = indexOfImageArray+1
+    }
+    mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[indexOfImageArray]
+    console.log(indexOfImageArray)
 }, 3000);
 prevButtonMainHeroSection.addEventListener('click',()=>{
+    indexOfImageArray = indexOfImageArray-1
 
+    mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[indexOfImageArray]
+})
+nextButtonMainHeroSection.addEventListener('click',()=>{
+    indexOfImageArray = indexOfImageArray+1
 
-    mainHeroSectionTextAndIconProductsPage.style.backgroundImage = 'item'
+    mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[indexOfImageArray]
 })
 
 
