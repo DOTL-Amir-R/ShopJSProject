@@ -13,6 +13,9 @@ const lowestTohighestFilterBox = document.getElementById('lowest-to-highest-filt
 const modelFilterHpCheckBox = document.getElementById('model-hp-checkbox');
 const modelFilterAsusCheckBox = document.getElementById('model-asus-checkbox');
 const modelFilterAcerCheckBox = document.getElementById('model-acer-checkbox');
+const mainHeroSectionTextAndIconProductsPage = document.getElementById('main-hero-section-text-and-icon-products-page');
+const prevButtonMainHeroSection = document.getElementById('prev-button-main-hero-section');
+const nrevButtonMainHeroSection = document.getElementById('prev-button-main-hero-section');
 
 
 function makeStarsForProducts(testItem){
@@ -212,3 +215,49 @@ modelFilterAcerCheckBox.addEventListener('click',()=>{
         }
     })
 });
+
+const arrayOfSliderPictures = [
+    'url(../img/product-one.png)',
+    'url(../img/car-first.jpg)',
+    'url(../img/car-second.jpg)',
+    'url(../img/car-third.jpg)',
+    'url(../img/../img/hero-section-img.png)',
+
+]
+setInterval(() => {
+    mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[0]
+    console.log(arrayOfSliderPictures[0])
+}, 3000);
+prevButtonMainHeroSection.addEventListener('click',()=>{
+
+
+    mainHeroSectionTextAndIconProductsPage.style.backgroundImage = 'item'
+})
+
+
+// function showSlides(n) {
+//     let i;
+//     let slides = document.getElementsByClassName("mySlides");
+//     let dots = document.getElementsByClassName("dot");
+//     if (n > slides.length) {slideIndex = 1}    
+//     if (n < 1) {slideIndex = slides.length}
+//     for (i = 0; i < slides.length; i++) {
+//       slides[i].style.display = "none";  
+//     }
+//     for (i = 0; i < dots.length; i++) {
+//       dots[i].className = dots[i].className.replace(" active", "");
+//     }
+//     slides[slideIndex-1].style.display = "block";  
+//     dots[slideIndex-1].className += " active";
+//   }
+// let slideIndex = 1;
+// showSlides(slideIndex);
+
+// function plusSlides(n) {
+//   showSlides(slideIndex += n);
+// }
+
+// function currentSlide(n) {
+//   showSlides(slideIndex = n);
+// }
+

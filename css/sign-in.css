@@ -130,6 +130,9 @@ Utils
 .width-33-percentage{
     width: 33%;
 }
+.vertical-align-mid{
+    vertical-align: middle;
+}
 /**********
 typeographi
 **********/
@@ -289,4 +292,14 @@ more details page
 }
 .arrows-container{
     height: 2.5rem;
+}
+/*******************
+slideShow
+*******************/
+.main-hero-section-text-products-page{
+    background-image: url(../img/hero-section-img.png);
+    transition: all 1s;
+    padding: 9rem 24.5rem 9rem 24.5rem;
+    border-radius: .5rem;
+    margin-top: 1rem;
 }
