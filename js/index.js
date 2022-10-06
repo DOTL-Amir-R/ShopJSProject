@@ -15,8 +15,9 @@ const modelFilterAsusCheckBox = document.getElementById('model-asus-checkbox');
 const modelFilterAcerCheckBox = document.getElementById('model-acer-checkbox');
 const mainHeroSectionTextAndIconProductsPage = document.getElementById('main-hero-section-text-and-icon-products-page');
 const prevButtonMainHeroSection = document.getElementById('prev-button-main-hero-section');
-const nextButtonMainHeroSection = document.getElementById('prev-button-main-hero-section');
-
+const nextButtonMainHeroSection = document.getElementById('next-button-main-hero-section');
+const searchInputProductPage = document.getElementById('search-input-product-page')
+const searchIconProductPage = document.getElementById('search-icon-product-page')
 
 function makeStarsForProducts(testItem){
     switch(testItem.rating){
@@ -73,7 +74,7 @@ function makeStarsForProducts(testItem){
             `
     }
 };
-// in male new products cards function you need to fix the last line for better performance
+// new products cards function you need to fix the last line for better performance
 function makeNewProductCards(itemData){
     const newProductCard = 
     `<a id="${itemData.id}" href="./more-detail-for-one-product.html">
@@ -111,25 +112,41 @@ productsData().map((item)=>{
     makeNewProductCards(item)
 })
 
-const productsArray = [...allProductsCardContainerProductsPage.children] 
-
-productsArray.forEach((product)=>{
-    product.addEventListener('click',()=>{
-        productsData().forEach((backData)=>{
-            if(Number(product.id) === Number(backData.id)  ){
-                localStorage.setItem('currentProductID',JSON.stringify(backData.id))
-            }
+function getProductIdAndSendItToLocalStorage(){
+    let productsArray = [...allProductsCardContainerProductsPage.children]
+    console.log(productsArray)
+    productsArray.forEach((product)=>{
+        product.addEventListener('click',()=>{
+            productsData().forEach((backData)=>{
+                if(Number(product.id) === Number(backData.id)  ){
+                    localStorage.setItem('currentProductID',JSON.stringify(backData.id))
+                }
+            })
         })
     })
-})
+}
+ 
+
+getProductIdAndSendItToLocalStorage()
 
 deleteAllFilters.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
     productsData().forEach((item)=>{
         makeNewProductCards(item)
     })
+    getProductIdAndSendItToLocalStorage()
 })
 
+searchInputProductPage.addEventListener('keyup',()=>{
+    allProductsCardContainerProductsPage.innerHTML = ''
+    const productNameInSearchInput = searchInputProductPage.value.toLowerCase()
+    productsData().forEach((item)=>{
+        if(item.name.includes(productNameInSearchInput)){
+            makeNewProductCards(item)
+        }
+    })
+    getProductIdAndSendItToLocalStorage()
+})
 ratingOneStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
     productsData().forEach((item)=>{
@@ -138,6 +155,7 @@ ratingOneStarFilterBox.addEventListener('click',()=>{
 
         }
     })
+    getProductIdAndSendItToLocalStorage()
 })
 ratingTwoStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -147,6 +165,7 @@ ratingTwoStarFilterBox.addEventListener('click',()=>{
             makeNewProductCards(item)
         }
     })
+    getProductIdAndSendItToLocalStorage()
 })
 ratingThreeStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -155,6 +174,7 @@ ratingThreeStarFilterBox.addEventListener('click',()=>{
             makeNewProductCards(item)
         }
     })
+    getProductIdAndSendItToLocalStorage()
 })
 ratingFourStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -164,6 +184,7 @@ ratingFourStarFilterBox.addEventListener('click',()=>{
             makeNewProductCards(item)
         }
     })
+    getProductIdAndSendItToLocalStorage()
 })
 ratingFiveStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -172,6 +193,7 @@ ratingFiveStarFilterBox.addEventListener('click',()=>{
             makeNewProductCards(item)
         }
     })
+    getProductIdAndSendItToLocalStorage()
 })
 highestToLowestFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -181,6 +203,7 @@ highestToLowestFilterBox.addEventListener('click',()=>{
     newSortedByPriceArray.forEach((item)=>{
         makeNewProductCards(item)
     })
+    getProductIdAndSendItToLocalStorage()
 })
 lowestTohighestFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -190,6 +213,7 @@ lowestTohighestFilterBox.addEventListener('click',()=>{
     newSortedByPriceArray.forEach((item)=>{
         makeNewProductCards(item)
     })
+    getProductIdAndSendItToLocalStorage()
 })
 modelFilterHpCheckBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -198,6 +222,7 @@ modelFilterHpCheckBox.addEventListener('click',()=>{
             makeNewProductCards(item)
         }
     })
+    getProductIdAndSendItToLocalStorage()
 })
 modelFilterAsusCheckBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -206,6 +231,7 @@ modelFilterAsusCheckBox.addEventListener('click',()=>{
             makeNewProductCards(item)
         }
     })
+    getProductIdAndSendItToLocalStorage()
 });
 modelFilterAcerCheckBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
@@ -214,7 +240,14 @@ modelFilterAcerCheckBox.addEventListener('click',()=>{
             makeNewProductCards(item)
         }
     })
+    getProductIdAndSendItToLocalStorage()
 });
+searchIconProductPage.addEventListener('click',()=>{
+    searchInputProductPage.style.width = '20rem'
+    searchInputProductPage.style.padding = '0rem .5rem'
+
+})
+
 
 const arrayOfSliderPictures = [
     'url(../img/product-one.png)',
@@ -226,50 +259,24 @@ const arrayOfSliderPictures = [
 ]
 let indexOfImageArray = 0
 setInterval(() => {
-
     if(indexOfImageArray === arrayOfSliderPictures.length -1 ){
         indexOfImageArray = 0
     }else{
         indexOfImageArray = indexOfImageArray+1
     }
     mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[indexOfImageArray]
-    console.log(indexOfImageArray)
-}, 3000);
+}, 6000);
 prevButtonMainHeroSection.addEventListener('click',()=>{
-    indexOfImageArray = indexOfImageArray-1
-
+    if(indexOfImageArray !== 0){
+        indexOfImageArray = indexOfImageArray-1
+    }
     mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[indexOfImageArray]
 })
 nextButtonMainHeroSection.addEventListener('click',()=>{
-    indexOfImageArray = indexOfImageArray+1
-
+    if(indexOfImageArray !== arrayOfSliderPictures.length -1){
+        indexOfImageArray = indexOfImageArray+1
+    }
     mainHeroSectionTextAndIconProductsPage.style.backgroundImage = arrayOfSliderPictures[indexOfImageArray]
 })
 
-
-// function showSlides(n) {
-//     let i;
-//     let slides = document.getElementsByClassName("mySlides");
-//     let dots = document.getElementsByClassName("dot");
-//     if (n > slides.length) {slideIndex = 1}    
-//     if (n < 1) {slideIndex = slides.length}
-//     for (i = 0; i < slides.length; i++) {
-//       slides[i].style.display = "none";  
-//     }
-//     for (i = 0; i < dots.length; i++) {
-//       dots[i].className = dots[i].className.replace(" active", "");
-//     }
-//     slides[slideIndex-1].style.display = "block";  
-//     dots[slideIndex-1].className += " active";
-//   }
-// let slideIndex = 1;
-// showSlides(slideIndex);
-
-// function plusSlides(n) {
-//   showSlides(slideIndex += n);
-// }
-
-// function currentSlide(n) {
-//   showSlides(slideIndex = n);
-// }
 

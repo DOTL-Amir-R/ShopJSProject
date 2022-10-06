@@ -196,11 +196,13 @@ components
     border-radius: 2.21875rem;
 }
 .search-input-product-page{
+    width: 0%;
+    padding: 0;
+    transition:  1s linear;
     border: none;
     outline: none;
     border-top-right-radius: 0.25rem;
     border-bottom-right-radius: 0.25rem;
-    width: 20rem;
 }
 .product-card-container-products-page{
     padding: 0.75rem 0.75rem 0.5rem 0.75rem;
@@ -224,6 +226,7 @@ components
     border-top-left-radius: 0.25rem;
     border-bottom-left-radius: 0.25rem;
     background-color: #13A4EC;
+    transition:  1s;
 }
 /*.or-text::before{
     display: flex;
@@ -299,7 +302,11 @@ slideShow
 .main-hero-section-text-products-page{
     background-image: url(../img/hero-section-img.png);
     transition: all 1s;
-    padding: 9rem 24.5rem 9rem 24.5rem;
     border-radius: .5rem;
     margin-top: 1rem;
+}
+.text-of-hero-section{
+    padding: 9rem 24.5rem 9rem 24.5rem;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: .5rem;
 }
