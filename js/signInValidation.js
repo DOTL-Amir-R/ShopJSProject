@@ -4,6 +4,10 @@ const lastNameInput = document.getElementById('last-name-input');
 const emailNameInput = document.getElementById('email-name-input');
 const passwordNameInput = document.getElementById('password-name-input');
 const createYourAccountBtn = document.getElementById('create-your-account-btn');
+const btnForPersonalAccount = document.getElementById('btn-for-personal-account');
+const btnForBusinessAccount = document.getElementById('btn-for-business-account');
+let circlePersonalAccountBtnIsEmpty =true
+let circleBusinessAccountBtnIsEmpty = true
 // const containerForErrorInputLastName = document.getElementById('container-for-error-input-last-name')
 // const containerForErrorInputFirstName = document.getElementById('container-for-error-input-first-name')
 const containerOfIndividualInputErrorArray = [
@@ -84,4 +88,28 @@ createYourAccountBtn.addEventListener('click',()=>{
 
     })
     // console.log(userDataArray);
+})
+btnForPersonalAccount.addEventListener('click',()=>{
+    if(circlePersonalAccountBtnIsEmpty){
+        btnForPersonalAccount.src = '../img/filled-button.svg';
+        btnForBusinessAccount.src = '../img/empty-button.svg';
+        circleBusinessAccountBtnIsEmpty = true
+        circlePersonalAccountBtnIsEmpty = false
+    }else{
+        btnForPersonalAccount.src = '../img/empty-button.svg';
+        circlePersonalAccountBtnIsEmpty = true
+    }
+
+})
+btnForBusinessAccount.addEventListener('click',()=>{
+    if(circleBusinessAccountBtnIsEmpty){
+        btnForBusinessAccount.src = '../img/filled-button.svg';
+        btnForPersonalAccount.src = '../img/empty-button.svg';
+        circlePersonalAccountBtnIsEmpty = true
+        circleBusinessAccountBtnIsEmpty = false
+    }else{
+        btnForBusinessAccount.src = '../img/empty-button.svg';
+        circleBusinessAccountBtnIsEmpty = true
+    }
+
 })
