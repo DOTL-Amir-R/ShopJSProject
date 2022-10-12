@@ -32,16 +32,30 @@
             <div class="different-methods-container d-flex justify-content-center gap-4 margin-top-19">
                 <div class="website-sign-in-main-method-container d-flex flex-column">
                         <form class="first-name-last-name-inputs-container d-flex  justify-content-center gap-30">
-                            <input class="first-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="First name" >
-                            <input class="last-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="Last name" >
+                            <div id="container-for-error-input-first-name" class="container-for-error-input-first-name">
+                                <input id="first-name-input" class="first-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="First name" >
+
+                            </div>
+                            <!-- <div id="first-name-error-text" class="red-color">please fill this</div> -->
+                            <div id="container-for-error-input-last-name" class="container-for-error-input-last-name">
+                                <input id="last-name-input" class="last-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="Last name" >
+
+                            </div>
+
                         </form>
                         <form class="email-password-inputs-container d-flex flex-column margin-top-38">
-                            <input class="email-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="email" placeholder="Email " >
-                            <input class="password-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none margin-top-38" type="password" placeholder="Password" >
+                            <div id="container-for-error-input-email-name" class="container-for-error-input-email-name">
+                                <input id="email-name-input" class="email-name-input background-none border-1-FAFAFA w-100 f-size-28 fw-normal border-radius-8 outline-border-none" type="email" placeholder="Email " >
+                            </div>
+                            <div id="container-for-error-input-password-name" class="container-for-error-input-password-name">
+                                <input id="password-name-input" class="password-name-input w-100 background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none margin-top-38" type="password" placeholder="Password" >
+                            </div>
+                            
+                            
                         </form>
 
                     <div class="create-button-container d-flex align-items-center justify-content-center my-4">
-                        <button class="create-your-account-btn f-size-32 fw-normal py-3 my-1" >Create account</button>
+                        <button id="create-your-account-btn" class="create-your-account-btn f-size-32 fw-normal py-3 my-1" >Create account</button>
                     </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
@@ -58,5 +72,6 @@
                 </div>
             </div>
         </main>
+        <script src="../js/signInValidation.js"></script>
     </body>
 </html>

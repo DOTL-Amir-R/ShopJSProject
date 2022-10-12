@@ -35,6 +35,9 @@ Utils
 .position-absolute{
     position: absolute;
 }
+.red-color{
+    color: red;
+}
 .gray-color-8F8E8E{
     color: #8F8E8E;
 }
