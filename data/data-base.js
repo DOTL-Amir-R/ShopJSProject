@@ -7,7 +7,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:0,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'20000T',
             avaibality:'true',
             model:'asus'
@@ -20,7 +20,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:1,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'15000T',
             avaibality:'false',
             model:'hp'
@@ -32,7 +32,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:2,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'green',
+            color:'../img/color-red.svg',
             price:'400T',
             avaibality:'true',
             model:'micro'
@@ -44,7 +44,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:4,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'5786421450T',
             avaibality:'false',
             model:'acer'
@@ -56,7 +56,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'3T',
             avaibality:'false',
             model:'acer'
@@ -68,7 +68,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'5500000T',
             avaibality:'false',
             model:'acer'
@@ -80,7 +80,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'300T',
             avaibality:'false',
             model:'acer'
@@ -92,7 +92,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'3000T',
             avaibality:'false',
             model:'acer'
@@ -104,7 +104,7 @@ export default  function productsData() {
             reviews:'5 star',
             rating:5,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'30000T',
             avaibality:'false',
             model:'acer'
@@ -115,7 +115,7 @@ export default  function productsData() {
             reviews:'2 star',
             rating:2,
             moreDetails:'this is a new mouse for a hardcore gaming and pros only',
-            color:'red',
+            color:'../img/color-red.svg',
             price:'0123456789T',
             avaibality:'false',
             model:'nothing'

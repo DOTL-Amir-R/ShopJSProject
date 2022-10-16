@@ -41,15 +41,15 @@ productsData().forEach((item)=>{
                     Write your address
                 </div>
                 <form>
-                    <input type="number" value="1">
+                    <input id="input-for-determine-number-of-products" type="number" value="2">
                 </form>
                 <div class="colors-cotainer d-flex">
                     <div class="colors-title f-size-18 fw-normal">
                         Colors
                     </div>
-                    <div class="selected-colors-container">
-                    ${item.color}
-                    </div>
+                    <img class="selected-colors-container" src="${item.color}">
+                    
+                    </img>
                 </div>
                 <button id="add-to-your-basket" class="f-size-18 fw-normal">
                     Add to your basket

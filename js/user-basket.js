@@ -48,11 +48,12 @@ uniqId.map((productId)=>{
                         </div>
                         <div class="product-is-availabe-or-not-container d-flex">
                             <div class="product-is-availabe-or-not-text font-weight-500 f-size-24">availabe:</div>
-                            <img class="product-is-availabe-or-not-icon" src="${item.avaibality}" alt="${item.avaibality}">
+                            <div class="product-is-availabe-or-not-icon font-weight-500 f-size-24">${item.avaibality}</div>
                         </div>
                         <div class="time-of-product-arrive font-weight-500 f-size-24">
                             time to arrive from now: 2days
                         </div>
+                        <button id="delete-button-user-basket" class="delete-button font-weight-500 f-size-16 align-self-start py-1 px-3">Delete</button>
                         <div class="price-of-product fw-bold f-size-30">
                             price:${item.price}
                         </div>
@@ -66,7 +67,13 @@ uniqId.map((productId)=>{
         });
 
 });
-
+const productsCardArray = [...productsInBasketContainer.children]
+productsCardArray.map((item)=>{
+    const deleteButtonInUserBasket = item.querySelector('#delete-button-user-basket')
+    deleteButtonInUserBasket.addEventListener('click',()=>{
+        console.log(item)
+    })
+})
 
 uniqId.map((itemId,index)=>{
 
