@@ -18,7 +18,7 @@ const currentProductIdFromLocalStorage = localStorage.getItem('currentProductID'
 
 const dataFromLocalStorage = localStorage.getItem('idOfMainProductFromMoreDetailsPage');
 
-const dataFromLocalStorageParsed = JSON.parse(dataFromLocalStorage);
+const dataFromLocalStorageParsed =JSON.parse(dataFromLocalStorage);
 
 const arrayShared = dataFromLocalStorageParsed || [] ;
 productsData().forEach((item)=>{
