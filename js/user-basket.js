@@ -29,9 +29,10 @@ function renderProucts() {
                 <div class="product-details-container d-flex gap-68 ">
                     <div class="product-icon-input-counter-container d-flex flex-column gap-4 align-items-center">
                         <img class="product-icon" width="200" height="200" src="${item.icon}" alt="product icon">
-                        <form  class="">
-                            <input id="counter-of-products-input" class="counter-of-produxts-input" type="number" value="0">
-                        </form>
+
+                        <div id="counter-of-products-input" class="number-of-current-product font-weight-500 f-size-16 align-self-center">
+                         0
+                        </div>
                     </div>
                     <div class="product-more-details-container d-flex flex-column">
                         <div class="product-name font-weight-500 f-size-24">
@@ -51,7 +52,7 @@ function renderProucts() {
                         <div class="time-of-product-arrive font-weight-500 f-size-24">
                             time to arrive from now: 2days
                         </div>
-                        <button id="delete-button-user-basket" class="delete-button font-weight-500 f-size-16 align-self-start py-1 px-3">Delete</button>
+                        <button id="delete-button-user-basket" class="delete-button first-button-blue font-weight-500 f-size-16 align-self-start py-1 px-3">Delete</button>
                         <div class="price-of-product fw-bold f-size-30">
                             price:${item.price}
                         </div>
@@ -68,51 +69,7 @@ function renderProucts() {
 }
 
 renderProucts()
-// uniqId.map((productId)=>{
 
-//         productsData().map((item)=>{
-//             if(item.id === parseInt(productId)){
-//                 const putProductInBasket = `
-//                 <div id="${item.id}" class="product-card-container-user-basket-page d-flex justify-content-between p-4 width-71-percentage box-shadow-one">
-//                 <div class="product-details-container d-flex gap-68 ">
-//                     <div class="product-icon-input-counter-container d-flex flex-column gap-4 align-items-center">
-//                         <img class="product-icon" width="200" height="200" src="${item.icon}" alt="product icon">
-//                         <form  class="">
-//                             <input id="counter-of-products-input" class="counter-of-produxts-input" type="number" value="0">
-//                         </form>
-//                     </div>
-//                     <div class="product-more-details-container d-flex flex-column">
-//                         <div class="product-name font-weight-500 f-size-24">
-//                         ${item.name}
-//                         </div>
-//                         <div class="product-color-container d-flex">
-//                             <div class="product-color-text font-weight-500 f-size-24">Color:</div>
-//                             <img class="product-color-icon" src="${item.color}" alt="${item.color}">
-//                         </div>
-//                         <div class="product-store font-weight-500 f-size-24">
-//                             shop:pc center
-//                         </div>
-//                         <div class="product-is-availabe-or-not-container d-flex">
-//                             <div class="product-is-availabe-or-not-text font-weight-500 f-size-24">availabe:</div>
-//                             <div class="product-is-availabe-or-not-icon font-weight-500 f-size-24">${item.avaibality}</div>
-//                         </div>
-//                         <div class="time-of-product-arrive font-weight-500 f-size-24">
-//                             time to arrive from now: 2days
-//                         </div>
-//                         <button id="delete-button-user-basket" class="delete-button font-weight-500 f-size-16 align-self-start py-1 px-3">Delete</button>
-//                         <div class="price-of-product fw-bold f-size-30">
-//                             price:${item.price}
-//                         </div>
-//                     </div>
-//                 </div>
-//                 <img class="more-option align-self-start" src="../img/more-details.svg" alt="more details icon">
-//                 </div>
-//                 `
-//                 productsInBasketContainer.innerHTML += putProductInBasket
-//             };
-//         });
-
-// });
 
 
 function renderNumberOfProducts(arrayOfIdFromLocalStorage) {
@@ -124,8 +81,9 @@ function renderNumberOfProducts(arrayOfIdFromLocalStorage) {
                 const productCardIconAndDetailsContainer = [...productCardContainer[index].children]
                 const productImageAndInputContainer = [...productCardIconAndDetailsContainer[0].children]
                 const productInputCounterContainerAndIcon = [...productImageAndInputContainer[0].children]
-                const productInputCounter = productInputCounterContainerAndIcon[1][0]
-                productInputCounter.value = Number(productInputCounter.value) + 1
+                const productInputCounter = productInputCounterContainerAndIcon[1]
+                // console.log(productInputCounterContainerAndIcon[1])
+                productInputCounter.innerHTML = Number(productInputCounter.innerHTML) + 1
                 
     
             }
@@ -134,24 +92,9 @@ function renderNumberOfProducts(arrayOfIdFromLocalStorage) {
     })
 }
 renderNumberOfProducts(getItemFromLocalStorageParsed)
-// uniqId.map((itemId,index)=>{
 
-//     getItemFromLocalStorageParsed.map((originalItemId)=>{
-//         if(itemId === originalItemId){
-//             const productCardContainer = [...productsInBasketContainer.children]
-//             const productCardIconAndDetailsContainer = [...productCardContainer[index].children]
-//             const productImageAndInputContainer = [...productCardIconAndDetailsContainer[0].children]
-//             const productInputCounterContainerAndIcon = [...productImageAndInputContainer[0].children]
-//             const productInputCounter = productInputCounterContainerAndIcon[1][0]
-//             productInputCounter.value = Number(productInputCounter.value) + 1
-
-//         }
-//     })
-
-// })
-
-function counterForItemsInUserBasket() {
-    return getItemFromLocalStorageParsed.length
+function counterForItemsInUserBasket(dataFromLocalStorage) {
+    return dataFromLocalStorage.length
 }
 
 function totalPriceCounter() {
@@ -161,18 +104,18 @@ function totalPriceCounter() {
         const productCardIconAndDetailsContainer = [...productCardContainer[index].children]
         const productImageAndInputContainer = [...productCardIconAndDetailsContainer[0].children]
         const productInputCounterContainerAndIcon = [...productImageAndInputContainer[0].children]
-        const productInputCounter = productInputCounterContainerAndIcon[1][0]
+        const productInputCounter = productInputCounterContainerAndIcon[1]
         productsData().map((item)=>{
             if(item.id === Number(itemId)){
-                const price = parseInt(item.price) * parseInt(productInputCounter.value)
+                const price = parseInt(item.price) * parseInt(productInputCounter.innerHTML)
                 totalPriceOfProduct = parseInt(totalPriceOfProduct) + parseInt(price)
             }
         })
     })
     return totalPriceOfProduct
 }
-itemCounterTextHeader.innerHTML = `Items:${counterForItemsInUserBasket()}`
-numberOfItems.innerHTML = `Number of items:${counterForItemsInUserBasket()}`
+itemCounterTextHeader.innerHTML = `Items:${counterForItemsInUserBasket(getItemFromLocalStorageParsed)}`
+numberOfItems.innerHTML = `Number of items:${counterForItemsInUserBasket(getItemFromLocalStorageParsed)}`
 totalPriceOfItems.innerHTML = `Total price:${totalPriceCounter()}`
 
 generateProductsForSliderProduct(todaysOffProductsContainer);
@@ -192,19 +135,16 @@ productsCardArray.map((item,index)=>{
         const otherIdOfProducts = getItemFromLocalStorageParsed.filter((item02)=> parseInt(item02) !== parseInt(item.id) )
         const newIdOfArray = [...otherIdOfProducts , ...filteredArray]
         const setItemForLocalStorage = localStorage.setItem('idOfMainProductFromMoreDetailsPage',JSON.stringify(newIdOfArray));
-        // productsInBasketContainer.innerHTML =""
-        // renderProucts()
-        if(numberOfProducts.value > 1){
-            numberOfProducts.value = numberOfProducts.value -1 
-        }else{
+        numberOfProducts.innerHTML=Number(numberOfProducts.innerHTML)-1
+        if(Number(numberOfProducts.innerHTML) === 0){
+            totalPriceOfItems.innerHTML = `Total price:00`
             productsCardArray[index].remove()
+        }else{
+            totalPriceOfItems.innerHTML = `Total price:${totalPriceCounter()}`
         }
-        // renderNumberOfProducts(newIdOfArray)
-        // newIdOfArray.map((item)=>{
-        //     if(parseInt(item) === )
-        // })
-        // numberOfProducts =
-        console.log(productsCardArray[index]);
-        
+        itemCounterTextHeader.innerHTML = `Items:${counterForItemsInUserBasket(newIdOfArray)}`
+        numberOfItems.innerHTML = `Number of items:${counterForItemsInUserBasket(newIdOfArray)}`
+
+
     });
 });

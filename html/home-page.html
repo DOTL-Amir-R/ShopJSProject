@@ -32,133 +32,187 @@
         </header>
         <main>  
 
-            <div class="main-hero-sction-products-page d-flex align-items-center justify-content-between  px-3 margin-bot-60">
+            <div class="main-hero-sction-products-page d-flex align-items-center gap-3 justify-content-center  px-3 margin-bot-60">
                 <img id="prev-button-main-hero-section" class="main-hero-sction-products-page mx-4" src="../img/arrow-left.svg" alt="image of news">
                 <div id="main-hero-section-text-and-icon-products-page" class="main-hero-section-text-products-page ">
-                    <div class="text-of-hero-section fw-bold f-size-28">
+                    <div class="text-of-hero-section fw-bold f-size-28 white-color-fafafa">
                         what we now about the new cpu so far!
                     </div>
                 </div>
                 <img id="next-button-main-hero-section" class="main-hero-sction-products-page mx-4" src="../img/arrow-right.svg" alt="image of news">
 
             </div>
-            <div class="filter-title-products-page d-flex align-items-center justify-content-center">
-                select what you like
+            <div class="d-flex justify-content-center">
+                <div class="filter-all-container-main box-shadow-one px-3 h-75">
+                    <div class="filter-title-products-page d-flex align-items-center justify-content-center fw-bold f-size-24">
+                        select what you like
+                    </div>
+                    <div class="search-for-products-container d-flex align-items-center gap-68">
+                        <form class="search-container-product-page d-flex align-items-center">
+                            <img id="search-icon-product-page" class="search-icon-product-page" src="../img/search-icon.svg" alt="search icon">
+                            <input id="search-input-product-page" class="search-input-product-page py-1 " type="search" placeholder="search...">
+                        </form>
+                    </div>
+                    <div class="delete-all-filters-container mb-3 d-flex flex-column">
+                        <div class="delete-all-filters f-size-20 font-weight-500 ">
+                            Delete all filters
+                        </div>
+                        <img id="delete-all-filters" class="delete-icon with-60-px" src="../img/x-circle.svg">
+                    </div>
+                    <div class="filter-products-page-container d-flex justify-content-between flex-column align-items-start gap-3 mb-3">
+                        <div class="rating-of-product-container">
+                            <div class="title-of-type-products f-size-20 font-weight-500 d-flex flex-column">
+                                Average customer review
+                            </div>
+                            <ul class="list-of-filter-rating-products-page d-flex flex-column gap-4 flex-wrap">
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="rating-one-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="star-container d-flex">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                    </div>
+                                </li>
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="rating-two-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="star-container d-flex">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                    </div>
+                                </li>
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="rating-three-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="star-container d-flex">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                    </div>
+                                </li>
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="rating-four-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="star-container d-flex">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
+                                    </div>
+                                </li>
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="rating-five-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="star-container d-flex">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                        <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="price-of-product-container mb-3 d-flex flex-column">
+                            <div class="title-of-type-products f-size-20 font-weight-500 ">
+                                Sort by price
+                            </div>
+                            <ul class="list-of-filter-types-products-page d-flex flex-column gap-4 flex-wrap ">
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="highest-to-lowest-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="highest-to-lowest f-size-18 fw-normal">
+                                        sort from highest to lowest price
+                                    </div>
+                                </li>
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="lowest-to-highest-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="lowest-to-highest f-size-18 fw-normal">
+                                        sort from lowest to highest price
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="type-of-product-container d-flex flex-column">
+                            <div class="title-of-type-products f-size-20 font-weight-500">
+                                Models
+                            </div>
+                            <ul class="list-of-filter-types-products-page d-flex flex-column gap-4 flex-wrap">
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="model-hp-checkbox"  class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="text-hp f-size-18 fw-normal">
+                                        HP
+                                    </div>
+                                </li>
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="model-asus-checkbox" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="text-hp f-size-18 fw-normal" >
+                                        Asus
+                                    </div>
+                                </li>
+                                <li class="type-hp-container d-flex gap-3">
+                                    <img id="model-acer-checkbox" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
+                                    <div class="text-hp f-size-18 fw-normal">
+                                        Acer
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <ul id="all-products-card-container-products-page" class="all-products-card-container-products-page w-75 d-flex flex-row align-items-center flex-wrap gap-3 justify-content-center">
+    
+                </ul>
             </div>
-            <button id="delete-all-filters" class="delete-all-filters">delete all the filters</button>
-            <div class="filter-products-page-container d-flex justify-content-between flex-column align-items-center gap-3 mb-3">
-                <div class="rating-of-product-container">
-                    <div class="title-of-type-products f-size-24 font-weight-500">
-                        Average customer review
-                    </div>
-                    <ul class="list-of-filter-rating-products-page d-flex flex-row gap-4 flex-wrap">
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="rating-one-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="star-container d-flex">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                            </div>
-                        </li>
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="rating-two-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="star-container d-flex">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                            </div>
-                        </li>
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="rating-three-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="star-container d-flex">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                            </div>
-                        </li>
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="rating-four-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="star-container d-flex">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/empty-star.svg" alt="star-review">
-                            </div>
-                        </li>
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="rating-five-star-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="star-container d-flex">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                                <img class="star-icon" src="../img/filled-star.svg" alt="star-review">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="price-of-product-container mb-3">
-                    <div class="title-of-type-products f-size-24 font-weight-500">
-                        Sort by price
-                    </div>
-                    <ul class="list-of-filter-types-products-page d-flex flex-row gap-4 flex-wrap ">
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="highest-to-lowest-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="highest-to-lowest">
-                                sort from highest to lowest price
-                            </div>
-                        </li>
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="lowest-to-highest-filter-box" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="lowest-to-highest">
-                                sort from lowest to highest price
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="type-of-product-container ">
-                    <div class="title-of-type-products f-size-24 font-weight-500">
-                        Models
-                    </div>
-                    <ul class="list-of-filter-types-products-page d-flex flex-row gap-4 flex-wrap">
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="model-hp-checkbox"  class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="text-hp">
-                                HP
-                            </div>
-                        </li>
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="model-asus-checkbox" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="text-hp">
-                                Asus
-                            </div>
-                        </li>
-                        <li class="type-hp-container d-flex gap-3">
-                            <img id="model-acer-checkbox" class="empty-check-box" src="../img/empty-box.svg" alt="empty check box">
-                            <div class="text-hp">
-                                Acer
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="search-for-products-container d-flex align-items-center gap-68">
-                    <form class="search-container-product-page d-flex align-items-center">
-                        <img id="search-icon-product-page" class="search-icon-product-page" src="../img/search-icon.svg" alt="search icon">
-                        <input id="search-input-product-page" class="search-input-product-page py-1 " type="search" placeholder="search...">
-                    </form>
-                </div>
-            </div>
-            <ul id="all-products-card-container-products-page" class="all-products-card-container-products-page  d-flex flex-row align-items-center flex-wrap gap-3 justify-content-center">
-
-            </ul>
         </main>
+        <footer class="main-footer margin-top-100 pt-5 background-37475A">
+            <div class="second-container-of-main-footer background-232F3E white-color-fafafa d-flex gap-120 justify-content-center py-5">
+                <ul class="sell-your-stuff-container  d-flex flex-column align-items-center gap-32">
+                    <li class="title-of-sell-your-stuff f-size-32 fw-bold ">
+                        sell your stuff
+                    </li>
+                    <li class="how-to-sell fw-normal f-size-20">
+                        how to sell
+                    </li>
+                    <li class="go-to-sell-page fw-normal f-size-20">
+                        go to sell page
+                    </li>
+                </ul>
+                <ul class="contact-with-us-container d-flex flex-column align-items-center gap-32">
+                    <li class="contact-with-us f-size-32 fw-bold">
+                        contact with us
+                    </li>
+                    <li class="instegram-page fw-normal f-size-20">
+                        instegram
+                    </li>
+                    <li class="facebook-page fw-normal f-size-20">
+                        facebook
+                    </li>
+                </ul>
+                <ul class="about-us-container d-flex flex-column align-items-center gap-32">
+                    <li class="about-us f-size-32 fw-bold">
+                        about us
+                    </li>
+                    <li class="who-we-are fw-normal f-size-20">
+                        who we are
+                    </li>
+                    <li class="companies-page fw-normal f-size-20">
+                        companies
+                    </li>
+                </ul>
+                <ul class="community-section-container d-flex flex-column align-items-center gap-32">
+                    <li class="community-title f-size-32 fw-bold">
+                        community
+                    </li>
+                    <li class="annoncements-page fw-normal f-size-20">
+                        annoncements
+                    </li>
+                </ul>
+            </div>
+        </footer>
         <script type="module" src="../js/index.js"></script>
     </body>
 

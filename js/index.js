@@ -18,6 +18,16 @@ const prevButtonMainHeroSection = document.getElementById('prev-button-main-hero
 const nextButtonMainHeroSection = document.getElementById('next-button-main-hero-section');
 const searchInputProductPage = document.getElementById('search-input-product-page')
 const searchIconProductPage = document.getElementById('search-icon-product-page')
+let isOneStaredBoxFilled = true
+let isTwoStaredBoxFilled = true
+let isThreeStaredBoxFilled = true
+let isFourStaredBoxFilled = true
+let isFiveStaredBoxFilled = true
+let isHieghestToLowestFilled = true;
+let isLowestToHieghestFilled = true;
+let isFilterModelHpFilled = true;
+let isFilterModelAsusFilled = true;
+let isFilterModelAcerFilled = true;
 
 function makeStarsForProducts(testItem){
     switch(testItem.rating){
@@ -114,7 +124,7 @@ productsData().map((item)=>{
 
 function getProductIdAndSendItToLocalStorage(){
     let productsArray = [...allProductsCardContainerProductsPage.children]
-    console.log(productsArray)
+    // console.log(productsArray)
     productsArray.forEach((product)=>{
         product.addEventListener('click',()=>{
             productsData().forEach((backData)=>{
@@ -149,98 +159,273 @@ searchInputProductPage.addEventListener('keyup',()=>{
 })
 ratingOneStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
-    productsData().forEach((item)=>{
-        if(item.rating === 1){
-            makeNewProductCards(item)
+    if(isOneStaredBoxFilled){
+        ratingOneStarFilterBox.src = '../img/filled-box.svg';
+        ratingTwoStarFilterBox.src = '../img/empty-box.svg';
+        ratingThreeStarFilterBox.src = '../img/empty-box.svg';
+        ratingFourStarFilterBox.src = '../img/empty-box.svg';
+        ratingFiveStarFilterBox.src = '../img/empty-box.svg';
+        isOneStaredBoxFilled = false;
+        isTwoStaredBoxFilled = true;
+        isThreeStaredBoxFilled = true;
+        isFourStaredBoxFilled = true;
+        isFiveStaredBoxFilled = true;
+        productsData().forEach((item)=>{
+            if(item.rating === 1){
+                makeNewProductCards(item)
+    
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
 
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+    }else{
+        ratingOneStarFilterBox.src = '../img/empty-box.svg';
+        isOneStaredBoxFilled = true
+        productsData().forEach((item)=>{
+            makeNewProductCards(item)
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 })
 ratingTwoStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
-    productsData().forEach((item)=>{
-        if(item.rating === 2){
-            
+    if(isTwoStaredBoxFilled){
+        ratingTwoStarFilterBox.src = '../img/filled-box.svg';
+        ratingOneStarFilterBox.src = '../img/empty-box.svg';
+        ratingThreeStarFilterBox.src = '../img/empty-box.svg';
+        ratingFourStarFilterBox.src = '../img/empty-box.svg';
+        ratingFiveStarFilterBox.src = '../img/empty-box.svg';
+        isOneStaredBoxFilled = true;
+        isTwoStaredBoxFilled = false;
+        isThreeStaredBoxFilled = true;
+        isFourStaredBoxFilled = true;
+        isFiveStaredBoxFilled = true;
+        productsData().forEach((item)=>{
+            if(item.rating === 2){
+                
+                makeNewProductCards(item)
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        ratingTwoStarFilterBox.src = '../img/empty-box.svg';
+        isTwoStaredBoxFilled = true
+        productsData().forEach((item)=>{
             makeNewProductCards(item)
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 })
 ratingThreeStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
-    productsData().forEach((item)=>{
-        if(item.rating === 3){
+    if(isThreeStaredBoxFilled){
+        ratingThreeStarFilterBox.src = '../img/filled-box.svg';
+        ratingTwoStarFilterBox.src = '../img/empty-box.svg';
+        ratingOneStarFilterBox.src = '../img/empty-box.svg';
+        ratingFourStarFilterBox.src = '../img/empty-box.svg';
+        ratingFiveStarFilterBox.src = '../img/empty-box.svg';
+        isOneStaredBoxFilled = true;
+        isTwoStaredBoxFilled = true;
+        isThreeStaredBoxFilled = false;
+        isFourStaredBoxFilled = true;
+        isFiveStaredBoxFilled = true;
+        productsData().forEach((item)=>{
+            if(item.rating === 3){
+                makeNewProductCards(item)
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        ratingThreeStarFilterBox.src = '../img/empty-box.svg';
+        isThreeStaredBoxFilled = true
+        productsData().forEach((item)=>{
             makeNewProductCards(item)
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 })
 ratingFourStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
-    productsData().forEach((item)=>{
-        if(item.rating === 4){
-            
+    if(isFourStaredBoxFilled){
+        ratingFourStarFilterBox.src = '../img/filled-box.svg';
+        ratingTwoStarFilterBox.src = '../img/empty-box.svg';
+        ratingThreeStarFilterBox.src = '../img/empty-box.svg';
+        ratingOneStarFilterBox.src = '../img/empty-box.svg';
+        ratingFiveStarFilterBox.src = '../img/empty-box.svg';
+        isOneStaredBoxFilled = true;
+        isTwoStaredBoxFilled = true;
+        isThreeStaredBoxFilled = true;
+        isFourStaredBoxFilled = false;
+        isFiveStaredBoxFilled = true;
+        productsData().forEach((item)=>{
+            if(item.rating === 4){
+                
+                makeNewProductCards(item)
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        ratingFourStarFilterBox.src = '../img/empty-box.svg';
+        isFourStaredBoxFilled = true;
+        productsData().forEach((item)=>{
             makeNewProductCards(item)
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 })
 ratingFiveStarFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
-    productsData().forEach((item)=>{
-        if(item.rating === 5){
+    if(isFiveStaredBoxFilled){
+        ratingFiveStarFilterBox.src = '../img/filled-box.svg';
+        ratingTwoStarFilterBox.src = '../img/empty-box.svg';
+        ratingThreeStarFilterBox.src = '../img/empty-box.svg';
+        ratingFourStarFilterBox.src = '../img/empty-box.svg';
+        ratingOneStarFilterBox.src = '../img/empty-box.svg';
+        isOneStaredBoxFilled = true;
+        isTwoStaredBoxFilled = true;
+        isThreeStaredBoxFilled = true;
+        isFourStaredBoxFilled = true;
+        isFiveStaredBoxFilled = false;
+        productsData().forEach((item)=>{
+            if(item.rating === 5){
+                makeNewProductCards(item)
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        ratingFiveStarFilterBox.src = '../img/empty-box.svg';
+        isFiveStaredBoxFilled = true;
+        productsData().forEach((item)=>{
             makeNewProductCards(item)
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 })
 highestToLowestFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
+    if(isHieghestToLowestFilled){
+        highestToLowestFilterBox.src = '../img/filled-box.svg';
+        lowestTohighestFilterBox.src = '../img/empty-box.svg';
+        isLowestToHieghestFilled = true
+        isHieghestToLowestFilled = false
+        const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(b.price)-parseInt(a.price))
 
-    const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(b.price)-parseInt(a.price))
+        newSortedByPriceArray.forEach((item)=>{
+            makeNewProductCards(item)
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        highestToLowestFilterBox.src = '../img/empty-box.svg';
+        isHieghestToLowestFilled = true
+        productsData().forEach((item)=>{
+            makeNewProductCards(item)
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
 
-    newSortedByPriceArray.forEach((item)=>{
-        makeNewProductCards(item)
-    })
-    getProductIdAndSendItToLocalStorage()
 })
 lowestTohighestFilterBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
+    if(isLowestToHieghestFilled){
+        lowestTohighestFilterBox.src = '../img/filled-box.svg';
+        highestToLowestFilterBox.src = '../img/empty-box.svg';
+        isHieghestToLowestFilled = true
+        isLowestToHieghestFilled = false
+        const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(a.price)-parseInt(b.price))
 
-    const newSortedByPriceArray = productsData().sort((a,b)=> parseInt(a.price)-parseInt(b.price))
+        newSortedByPriceArray.forEach((item)=>{
+            makeNewProductCards(item)
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        lowestTohighestFilterBox.src = '../img/empty-box.svg';
+        isLowestToHieghestFilled = true
+        productsData().forEach((item)=>{
+            makeNewProductCards(item)
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
 
-    newSortedByPriceArray.forEach((item)=>{
-        makeNewProductCards(item)
-    })
-    getProductIdAndSendItToLocalStorage()
 })
 modelFilterHpCheckBox.addEventListener('click',()=>{
     allProductsCardContainerProductsPage.innerHTML = ""
-    const newFilterByModelHp = productsData().forEach((item)=>{
-        if(item.model === 'hp'){
+    if(isFilterModelHpFilled){
+        modelFilterHpCheckBox.src = '../img/filled-box.svg';
+        modelFilterAsusCheckBox.src = '../img/empty-box.svg';
+        modelFilterAcerCheckBox.src = '../img/empty-box.svg';
+        isFilterModelAsusFilled = true;
+        isFilterModelAcerFilled = true;
+        isFilterModelHpFilled = false
+        const newFilterByModelHp = productsData().forEach((item)=>{
+            if(item.model === 'hp'){
+                makeNewProductCards(item)
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        modelFilterHpCheckBox.src = '../img/empty-box.svg';
+        isFilterModelHpFilled = true
+        productsData().forEach((item)=>{
             makeNewProductCards(item)
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 })
 modelFilterAsusCheckBox.addEventListener('click',()=>{
-    allProductsCardContainerProductsPage.innerHTML = ""
-    const newFilterByModelAsus = productsData().forEach((item)=>{
-        if(item.model === 'asus'){
+    allProductsCardContainerProductsPage.innerHTML = "";
+    if(isFilterModelAsusFilled){
+        modelFilterHpCheckBox.src = '../img/empty-box.svg';
+        modelFilterAsusCheckBox.src = '../img/filled-box.svg';
+        modelFilterAcerCheckBox.src = '../img/empty-box.svg';
+        isFilterModelAsusFilled = false;
+        isFilterModelAcerFilled = true;
+        isFilterModelHpFilled = true;
+        const newFilterByModelAsus = productsData().forEach((item)=>{
+            if(item.model === 'asus'){
+                makeNewProductCards(item)
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        modelFilterAsusCheckBox.src = '../img/empty-box.svg';
+        isFilterModelAsusFilled = true
+        productsData().forEach((item)=>{
             makeNewProductCards(item)
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 });
 modelFilterAcerCheckBox.addEventListener('click',()=>{
-    allProductsCardContainerProductsPage.innerHTML = ""
-    const newFilterByModelAcer = productsData().forEach((item)=>{
-        if(item.model === 'acer'){
+    allProductsCardContainerProductsPage.innerHTML = "";
+    if(isFilterModelAcerFilled){
+        modelFilterHpCheckBox.src = '../img/empty-box.svg';
+        modelFilterAsusCheckBox.src = '../img/empty-box.svg';
+        modelFilterAcerCheckBox.src = '../img/filled-box.svg';
+        isFilterModelAsusFilled = true;
+        isFilterModelAcerFilled = false;
+        isFilterModelHpFilled = true;
+        const newFilterByModelAcer = productsData().forEach((item)=>{
+            if(item.model === 'acer'){
+                makeNewProductCards(item)
+            }
+        })
+        getProductIdAndSendItToLocalStorage()
+    }else{
+        modelFilterAcerCheckBox.src = '../img/empty-box.svg';
+        isFilterModelAcerFilled = true
+        productsData().forEach((item)=>{
             makeNewProductCards(item)
-        }
-    })
-    getProductIdAndSendItToLocalStorage()
+        })
+        getProductIdAndSendItToLocalStorage()
+    }
+
 });
 searchIconProductPage.addEventListener('click',()=>{
     searchInputProductPage.style.width = '20rem'
@@ -251,9 +436,9 @@ searchIconProductPage.addEventListener('click',()=>{
 
 const arrayOfSliderPictures = [
     'url(../img/product-one.png)',
-    'url(../img/car-first.jpg)',
-    'url(../img/car-second.jpg)',
-    'url(../img/car-third.jpg)',
+    'url(../img/mouse-second.png)',
+    'url(../img/mouse-third.png)',
+    'url(../img/gtx-icon.png)',
     'url(../img/../img/hero-section-img.png)',
 
 ]

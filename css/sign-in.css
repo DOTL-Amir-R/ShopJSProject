@@ -18,8 +18,8 @@ ul,li{
     margin: 0;
 }
 body{
-    background: rgba(35, 47, 62, 0.89);
-    color: #fafafa;
+    background: #fafafa;
+    color: rgba(35, 47, 62, 0.89);
 }
 .container{
     max-width: 1360px;
@@ -29,6 +29,15 @@ body{
 /************************************
 Utils
 *************************************/
+.background-37475A{
+    background-color: #37475A;
+}
+.background-232F3E{
+    background-color: #232F3E;
+}
+.background-fafafa{
+    background-color: #fafafa;
+}
 .position-relative{
     position: relative;
 }
@@ -56,6 +65,9 @@ Utils
 .padd-20{
     padding: 1.25rem;
 }
+.padd-bot-20{
+    padding-bottom: 1.25rem;
+}
 .white-color-fafafa{
     color: #fafafa;
 }
@@ -71,6 +83,9 @@ Utils
 .border-1-FAFAFA{
     border: 0.0625rem #fafafa solid;
 }
+.border-1-333333{
+    border: 0.0625rem #333333 solid;
+}
 .background-none{
     background: none;
 }
@@ -80,8 +95,14 @@ Utils
 .gap-68{
     gap: 4.25rem;
 }
+.gap-120{
+    gap:7.5rem;
+}
 .gap-32{
     gap: 2rem;
+}
+.gap-54{
+    gap: 3.375rem;
 }
 .gap-19{
     gap: 1.1875rem;
@@ -135,6 +156,15 @@ Utils
 }
 .vertical-align-mid{
     vertical-align: middle;
+}
+.border-orange{
+    border: orange 1px solid;
+}
+.with-60-px{
+    width: 3.75rem;
+}
+.width-18-percentage{
+    width: 18%;
 }
 /**********
 typeographi
@@ -190,6 +220,15 @@ sign in inputs
 /********************************
 components
 ********************************/
+
+.first-button-blue{
+    background: linear-gradient(270deg, #1B3FC0 -3.68%, #3595C5 100%);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border: none;
+    color: #fafafa;
+    padding: 5px 10px;
+}
 .create-your-account-btn{
     padding-left: 10.40625rem;
     padding-right: 10.40625rem;
@@ -199,6 +238,7 @@ components
     border-radius: 2.21875rem;
 }
 .search-input-product-page{
+    background: #3333;
     width: 0%;
     padding: 0;
     transition:  1s linear;
@@ -210,7 +250,7 @@ components
 .product-card-container-products-page{
     padding: 0.75rem 0.75rem 0.5rem 0.75rem;
     border-radius: 1rem;
-    background-color: #497E8F;
+    background-color: #376DD6;
 
 }
 /***************************
@@ -219,7 +259,7 @@ components
 .google-play-method{
     padding: 0.9375rem 10.8125rem 0.9375rem 1.5rem;
     background: #FAFAFA;
-    border: 0.0625rem solid #232323;
+
     border-radius: 2.21875rem;
     color: #474545;
     gap: 5.125rem;
@@ -231,18 +271,18 @@ components
     background-color: #13A4EC;
     transition:  1s;
 }
-/*.or-text::before{
+.or-text::before{
     display: flex;
     content: '';
     border: 0.0625rem solid #232323;
-    rotate: 90deg;
+    height: 12.25rem;
 }
 .or-text::after{
     display: flex;
     content: '';
     border: 0.0625rem solid #232323;
-    rotate: 90deg;
-}*/
+    height: 12.25rem;
+}
 /**************************
 main header
 ****************************/
@@ -255,9 +295,9 @@ main header
 /**************
 product page
 ***************/
-.body-products{
+/* .body-products{
     background-color: rgba(35, 47, 62, 89%);
-}
+} */
 
 /******
 hero-section-home-page
@@ -271,6 +311,10 @@ hero-section-home-page
 /***********
 progress bar for review
 ********************/
+.comments-of-users-container{
+    height: 30rem;
+    overflow-y: scroll;
+}
 .progress-bar-container{
     border-radius: 1rem;
     border: 0.0625rem solid #fafafa;
@@ -280,11 +324,27 @@ progress bar for review
     border-radius: 1rem;
     background-color: orange;
     padding: 0.5rem 1rem 0.875rem 1rem;
-    width: 50%;
+    transition: 1s all;
+    width: 0%;
 }
 /**************
 more details page
 **************/
+.input-for-determine-number-of-products{
+    text-align: center;
+    border: none;
+    outline: none;
+    border-top: 0.0625rem #333333 solid;;
+    border-bottom: 0.0625rem #333333 solid;;
+}
+.input-for-determine-number-of-products::-webkit-outer-spin-button,
+.input-for-determine-number-of-products::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.mines-btn{
+    width: 9.4%;
+}
 .related-products-container{
     transition: .6s all linear;
     left: 0%;
@@ -311,5 +371,19 @@ slideShow
 .text-of-hero-section{
     padding: 9rem 24.5rem 9rem 24.5rem;
     background-color: rgba(0,0,0,0.5);
+    border-radius: .5rem;
+}
+/****************
+home page
+****************/
+.text-offer-of-product{
+    background-image: url(../img/vertical-icon-product.png);
+    padding: 0.5rem 4.5rem 10.2rem 0.5rem;
+
+}
+.remaning-time-for-off{
+    background-color: #084F8F;
+    color: #FAFAFA;
+    padding: 1.875rem 1.875rem 7rem 1.875rem;
     border-radius: .5rem;
 }

@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     </head>
     <body>
-        <header class="sign-in-title d-flex align-items-center flex-column">
+        <header class="sign-in-title d-flex align-items-center flex-column mt-5">
             <img class="website-title" src="../img/Icon.svg" alt="ARDOTL LOGO">
             <div class="create-account-title f-size-40 fw-normal">Create an account</div>
         </header>
@@ -33,22 +33,21 @@
                 <div class="website-sign-in-main-method-container d-flex flex-column">
                         <form class="first-name-last-name-inputs-container d-flex  justify-content-center gap-30">
                             <div id="container-for-error-input-first-name" class="container-for-error-input-first-name">
-                                <input id="first-name-input" class="first-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="First name" >
+                                <input id="first-name-input" class="first-name-input background-none border-1-FAFAFA box-shadow-one f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="First name" >
 
                             </div>
-                            <!-- <div id="first-name-error-text" class="red-color">please fill this</div> -->
                             <div id="container-for-error-input-last-name" class="container-for-error-input-last-name">
-                                <input id="last-name-input" class="last-name-input background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="Last name" >
+                                <input id="last-name-input" class="last-name-input background-none box-shadow-one border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none" type="text" placeholder="Last name" >
 
                             </div>
 
                         </form>
                         <form class="email-password-inputs-container d-flex flex-column margin-top-38">
                             <div id="container-for-error-input-email-name" class="container-for-error-input-email-name">
-                                <input id="email-name-input" class="email-name-input background-none border-1-FAFAFA w-100 f-size-28 fw-normal border-radius-8 outline-border-none" type="email" placeholder="Email " >
+                                <input id="email-name-input" class="email-name-input background-none box-shadow-one border-1-FAFAFA w-100 f-size-28 fw-normal border-radius-8 outline-border-none" type="email" placeholder="Email " >
                             </div>
                             <div id="container-for-error-input-password-name" class="container-for-error-input-password-name">
-                                <input id="password-name-input" class="password-name-input w-100 background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none margin-top-38" type="password" placeholder="Password" >
+                                <input id="password-name-input" class="password-name-input box-shadow-one w-100 background-none border-1-FAFAFA f-size-28 fw-normal border-radius-8 outline-border-none margin-top-38" type="password" placeholder="Password" >
                             </div>
                             
                             
@@ -59,11 +58,11 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
-                    <div class="or-text  f-size-20 fw-normal">OR</div>
+                    <div class="or-text d-flex flex-column align-items-center  f-size-20 fw-normal">OR</div>
                 </div>
 
                 <div class="other-methods-sign-in-container">
-                    <div class="google-play-method d-flex align-items-center">
+                    <div class="google-play-method d-flex align-items-center box-shadow-one">
                         <img class="google-icon-method" src="../img/google-icon.svg">
                         <span class="google-method-title f-size-28 fw-normal">
                             Continue with Google
@@ -72,6 +71,51 @@
                 </div>
             </div>
         </main>
+        <footer class="main-footer margin-top-100 pt-5 background-37475A">
+            <div class="second-container-of-main-footer background-232F3E white-color-fafafa d-flex gap-120 justify-content-center py-5">
+                <ul class="sell-your-stuff-container  d-flex flex-column align-items-center gap-32">
+                    <li class="title-of-sell-your-stuff f-size-32 fw-bold ">
+                        sell your stuff
+                    </li>
+                    <li class="how-to-sell fw-normal f-size-20">
+                        how to sell
+                    </li>
+                    <li class="go-to-sell-page fw-normal f-size-20">
+                        go to sell page
+                    </li>
+                </ul>
+                <ul class="contact-with-us-container d-flex flex-column align-items-center gap-32">
+                    <li class="contact-with-us f-size-32 fw-bold">
+                        contact with us
+                    </li>
+                    <li class="instegram-page fw-normal f-size-20">
+                        instegram
+                    </li>
+                    <li class="facebook-page fw-normal f-size-20">
+                        facebook
+                    </li>
+                </ul>
+                <ul class="about-us-container d-flex flex-column align-items-center gap-32">
+                    <li class="about-us f-size-32 fw-bold">
+                        about us
+                    </li>
+                    <li class="who-we-are fw-normal f-size-20">
+                        who we are
+                    </li>
+                    <li class="companies-page fw-normal f-size-20">
+                        companies
+                    </li>
+                </ul>
+                <ul class="community-section-container d-flex flex-column align-items-center gap-32">
+                    <li class="community-title f-size-32 fw-bold">
+                        community
+                    </li>
+                    <li class="annoncements-page fw-normal f-size-20">
+                        annoncements
+                    </li>
+                </ul>
+            </div>
+        </footer>
         <script src="../js/signInValidation.js"></script>
     </body>
 </html>

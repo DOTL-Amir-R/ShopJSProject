@@ -8,6 +8,6 @@ CSS Reset
     box-sizing: border-box;
 }
 body{
-    background-color: #474545;
-    color: #fafafa;
+    background: #fafafa;
+    color: rgba(35, 47, 62, 0.89);
 }

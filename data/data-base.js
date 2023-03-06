@@ -15,7 +15,7 @@ export default  function productsData() {
         },
         {
             id:2,
-            icon:'../img/product-one.png',
+            icon:'../img/gtx-icon.png',
             name:'rtx,4gb',
             reviews:'5 star',
             rating:1,
@@ -27,7 +27,7 @@ export default  function productsData() {
         },
         {
             id:3,
-            icon:'../img/product-one.png',
+            icon:'../img/mouse-second.png',
             name:'gtx165,6gb',
             reviews:'5 star',
             rating:2,
@@ -39,7 +39,7 @@ export default  function productsData() {
         },
         {
             id:4,
-            icon:'../img/product-one.png',
+            icon:'../img/mouse-third.png',
             name:'gtx950,4gb',
             reviews:'5 star',
             rating:4,
@@ -51,7 +51,7 @@ export default  function productsData() {
         },
         {
             id:5,
-            icon:'../img/product-one.png',
+            icon:'../img/CPU-icon.png',
             name:'gtx950,4gb',
             reviews:'5 star',
             rating:5,
@@ -63,10 +63,10 @@ export default  function productsData() {
         },
         {
             id:6,
-            icon:'../img/product-one.png',
+            icon:'../img/CPU-icon.png',
             name:'gtx950,4gb',
             reviews:'5 star',
-            rating:5,
+            rating:1,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'../img/color-red.svg',
             price:'5500000T',
@@ -75,10 +75,10 @@ export default  function productsData() {
         },
         {
             id:7,
-            icon:'../img/product-one.png',
-            name:'gtx950,4gb',
+            icon:'../img/mouse-second.png',
+            name:'fffffffffffff',
             reviews:'5 star',
-            rating:5,
+            rating:1,
             moreDetails:'this is a new card graphic for a ddr4 and its good for gaming',
             color:'../img/color-red.svg',
             price:'300T',
@@ -87,7 +87,7 @@ export default  function productsData() {
         },
         {
             id:8,
-            icon:'../img/product-one.png',
+            icon:'../img/mouse-third.png',
             name:'gtx950,4gb',
             reviews:'5 star',
             rating:5,
@@ -99,7 +99,7 @@ export default  function productsData() {
         },
         {
             id:9,
-            icon:'../img/product-one.png',
+            icon:'../img/mouse-second.png',
             name:'gtx950,4gb',
             reviews:'5 star',
             rating:5,
@@ -108,17 +108,6 @@ export default  function productsData() {
             price:'30000T',
             avaibality:'false',
             model:'acer'
-        },        {
-            id:10,
-            icon:'../img/product-one.png',
-            name:'mouse 2500 gg hf gaming',
-            reviews:'2 star',
-            rating:2,
-            moreDetails:'this is a new mouse for a hardcore gaming and pros only',
-            color:'../img/color-red.svg',
-            price:'0123456789T',
-            avaibality:'false',
-            model:'nothing'
         },
         
     ]
